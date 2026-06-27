@@ -1,11 +1,6 @@
-import { getMockSearchResults } from './mock'
 import type { SearchResult } from '@/types'
 
-const USE_MOCK = process.env.USE_MOCK_SEARCH === 'true'
-
 export async function searchWeb(query: string): Promise<SearchResult[]> {
-  if (USE_MOCK) return getMockSearchResults(query)
-
   const res = await fetch('https://api.tavily.com/search', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
