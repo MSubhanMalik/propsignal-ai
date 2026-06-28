@@ -16,7 +16,7 @@ export function ReportView({ report }: Props) {
 
       {report.signals.length > 0 && (
         <div>
-          <h2 className="text-base font-semibold text-[#0D1B2A] mb-3">
+          <h2 className="font-display font-semibold text-sm text-muted-foreground uppercase tracking-widest mb-4">
             Signals Found ({report.signals.length})
           </h2>
           <div className="space-y-3">
@@ -30,9 +30,11 @@ export function ReportView({ report }: Props) {
       <SourceList sources={sources} />
 
       {report.signals.length === 0 && (
-        <div className="bg-white border border-[#E2E8F0] rounded-xl p-8 text-center">
-          <p className="text-[#94A3B8] text-sm">No public signals found for this project.</p>
-          <p className="text-[#94A3B8] text-xs mt-1">This may indicate a new or locally-known project with limited public presence.</p>
+        <div className="bg-white rounded-2xl border-2 border-foreground p-10 text-center shadow-[4px_4px_0px_oklch(0.105_0.038_265)]">
+          <p className="font-display font-semibold text-foreground mb-1">No signals found</p>
+          <p className="text-sm text-muted-foreground">
+            This may be a new or locally-known project with limited public presence.
+          </p>
         </div>
       )}
     </div>

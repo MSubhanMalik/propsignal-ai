@@ -2,7 +2,9 @@
 
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Loader2 } from 'lucide-react'
 
 const SAMPLES = [
   'DHA Valley Islamabad',
@@ -26,43 +28,32 @@ export function SearchForm({ onSubmit, loading }: Props) {
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} className="flex gap-3">
-        <input
+        <Input
           type="text"
           value={value}
           onChange={e => setValue(e.target.value)}
-          placeholder="e.g. DHA Valley Islamabad, Bahria Town Karachi..."
+          placeholder="e.g. DHA Valley Islamabad..."
           disabled={loading}
-          className={cn(
-            'flex-1 h-11 px-4 rounded-lg border text-sm bg-white',
-            'border-[#E2E8F0] text-[#0D1B2A] placeholder:text-[#94A3B8]',
-            'focus:outline-none focus:border-[#1D4ED8] focus:ring-2 focus:ring-blue-100',
-            'disabled:opacity-50 disabled:cursor-not-allowed',
-            'transition-colors'
-          )}
+          className="flex-1 h-12 rounded-full px-5 bg-white border-2 border-foreground text-sm shadow-[2px_2px_0px_oklch(0.105_0.038_265)] focus-visible:shadow-[3px_3px_0px_oklch(0.52_0.24_277)] focus-visible:border-primary transition-all"
         />
-        <button
+        <Button
           type="submit"
           disabled={loading || !value.trim()}
-          className={cn(
-            'h-11 px-5 rounded-lg text-sm font-medium text-white',
-            'bg-[#1D4ED8] hover:bg-[#1E3A8A]',
-            'disabled:opacity-50 disabled:cursor-not-allowed',
-            'transition-colors flex items-center gap-2 whitespace-nowrap'
-          )}
+          className="h-12 px-6 rounded-full font-display font-semibold text-sm whitespace-nowrap border-2 border-foreground shadow-[3px_3px_0px_oklch(0.105_0.038_265)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all"
         >
           {loading ? (
             <>
-              <Spinner />
+              <Loader2 className="h-4 w-4 animate-spin" />
               Researching...
             </>
           ) : (
-            'Research'
+            'Research →'
           )}
-        </button>
+        </Button>
       </form>
 
-      <div className="flex items-center gap-2 mt-3 flex-wrap">
-        <span className="text-xs text-[#94A3B8]">Try:</span>
+      <div className="flex items-center gap-2 mt-4 flex-wrap">
+        <span className="text-xs text-muted-foreground">Try:</span>
         {SAMPLES.map(s => (
           <button
             key={s}
@@ -71,26 +62,12 @@ export function SearchForm({ onSubmit, loading }: Props) {
               if (!loading) onSubmit(s)
             }}
             disabled={loading}
-            className={cn(
-              'text-xs px-3 py-1 rounded-full border border-[#E2E8F0]',
-              'text-[#475569] hover:border-[#1D4ED8] hover:text-[#1D4ED8]',
-              'disabled:opacity-40 disabled:cursor-not-allowed',
-              'transition-colors bg-white'
-            )}
+            className="text-xs px-3 py-1.5 rounded-full bg-white border border-border text-muted-foreground hover:border-primary hover:text-primary disabled:opacity-40 disabled:cursor-not-allowed transition-colors font-medium"
           >
             {s}
           </button>
         ))}
       </div>
     </div>
-  )
-}
-
-function Spinner() {
-  return (
-    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
-      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
-    </svg>
   )
 }

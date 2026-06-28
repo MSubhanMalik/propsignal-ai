@@ -5,6 +5,8 @@ import { useReport } from '@/hooks/useReport'
 import { Navbar } from '@/components/layout/Navbar'
 import { ProgressTracker } from './ProgressTracker'
 import { ReportView } from './ReportView'
+import { Button } from '@/components/ui/button'
+import { Loader2 } from 'lucide-react'
 import type { AgentStep } from '@/types'
 
 export function ReportScreen() {
@@ -13,22 +15,26 @@ export function ReportScreen() {
   const { report, error } = useReport(id)
 
   return (
-    <div className="min-h-screen bg-[#F7F8FA]">
+    <div className="min-h-screen bg-background">
       <Navbar breadcrumb="Report" />
       <main className="max-w-3xl mx-auto px-6 py-8">
 
         {error && (
           <div className="text-center py-20">
-            <p className="text-[#94A3B8] text-sm">{error}</p>
-            <button onClick={() => router.push('/')} className="mt-4 text-sm text-[#1D4ED8] hover:underline">
+            <p className="text-muted-foreground text-sm mb-4">{error}</p>
+            <Button
+              variant="outline"
+              onClick={() => router.push('/')}
+              className="rounded-full font-display"
+            >
               ← Back to search
-            </button>
+            </Button>
           </div>
         )}
 
         {!report && !error && (
           <div className="flex items-center justify-center py-20">
-            <div className="w-5 h-5 border-2 border-[#1D4ED8] border-t-transparent rounded-full animate-spin" />
+            <Loader2 className="w-6 h-6 text-primary animate-spin" />
           </div>
         )}
 
@@ -42,12 +48,16 @@ export function ReportScreen() {
         )}
 
         {report?.status === 'error' && (
-          <div className="bg-red-50 border border-red-200 rounded-xl p-5 text-center">
-            <p className="text-sm text-red-700 font-medium">Research failed</p>
-            <p className="text-xs text-red-500 mt-1">{report.error ?? 'Unknown error'}</p>
-            <button onClick={() => router.push('/')} className="mt-3 text-sm text-[#1D4ED8] hover:underline">
+          <div className="bg-white rounded-2xl border-2 border-red-300 p-8 text-center shadow-[4px_4px_0px_theme(colors.red.200)]">
+            <p className="font-display font-bold text-red-600 mb-1">Research failed</p>
+            <p className="text-xs text-red-500/80 mb-5">{report.error ?? 'Unknown error'}</p>
+            <Button
+              variant="outline"
+              onClick={() => router.push('/')}
+              className="rounded-full font-display"
+            >
               ← Try again
-            </button>
+            </Button>
           </div>
         )}
 
