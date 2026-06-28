@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse, after } from 'next/server'
 import { db } from '@/services/supabase'
 import { runAgent } from '@/services/agent/graph'
 
@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
 
   const reportId = data.id as string
 
-  runAgent(reportId, projectInput.trim())
+  after(runAgent(reportId, projectInput.trim()))
 
   return NextResponse.json({ reportId }, { status: 202 })
 }
