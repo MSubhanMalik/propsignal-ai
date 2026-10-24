@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parakh · Coming soon</title>
+<link rel="stylesheet" href="film.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#FBF8F2;--ink:#1A1D24;--accent:#1D4A9E;--night:#0D0B08;--gradient:linear-gradient(125deg,#112C66 0%,#1D4A9E 55%,#2B5FC0 100%);--sans:"Plus Jakarta Sans",system-ui,sans-serif;}
+  body{font-family:var(--sans);}
+  .ur{font-family:"Noto Nastaliq Urdu",serif;direction:rtl;}
+  .scene.night{background:var(--night);color:#fff;}
+  .scene.ivory{background:var(--paper);color:var(--ink);}
+  .scene.cobalt{background:var(--gradient);color:#fff;}
+  .bgimg{position:absolute;inset:0;overflow:hidden;}
+  .bgimg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(13,11,8,.35),rgba(13,11,8,.92) 72%);}
+  .glow{position:absolute;border-radius:50%;filter:blur(120px);}
+  .wb{display:inline-block;white-space:pre;}
+  .kick{font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;}
+  .ctr{position:absolute;left:0;right:0;text-align:center;}
+  .money{font-size:210px;font-weight:800;letter-spacing:-.05em;line-height:1;color:#F5B14A;font-variant-numeric:tabular-nums;}
+  .money small{font-size:90px;font-weight:700;letter-spacing:-.02em;color:rgba(245,177,74,.75);margin-right:24px;}
+  .big{font-size:150px;font-weight:800;letter-spacing:-.05em;line-height:1;}
+  .mid{font-size:88px;font-weight:800;letter-spacing:-.04em;line-height:1.08;}
+  .huge{font-size:240px;font-weight:800;letter-spacing:-.06em;line-height:1;}
+  .stack{position:absolute;left:0;right:0;top:400px;height:260px;}
+  .stack>div{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .rule{position:absolute;height:3px;transform-origin:left center;}
+  .src{position:absolute;font-weight:700;letter-spacing:-.01em;color:#B5AB98;white-space:nowrap;}
+  .mark{position:absolute;left:0;right:0;display:flex;justify-content:center;align-items:baseline;}
+  .ring{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.10);}
+</style>
+</head>
+<body data-duration="36.4" data-fps="30" data-width="1920" data-height="1080">
+<div class="stage">
+
+  <!-- 1 · 0–3.0  Real street, real sound -->
+  <section class="scene night" data-from="0" data-to="3.4">
+    <div class="bgimg"><video src="img/v-crowd.webm" data-vfrom="0" muted playsinline style="width:100%;height:100%;object-fit:cover" data-pan="scale(1.0) | scale(1.04)" data-pan-dur="3.2"></video></div>
+    <div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(13,11,8,.15) 30%,rgba(13,11,8,.85) 100%)"></div>
+    <div class="abs" style="left:120px;bottom:130px;width:1760px">
+      <div class="kick" style="color:rgba(255,255,255,.7)" data-in="track" data-at="0.2" data-dur="1.2">Pakistan</div>
+      <div class="mid" style="margin-top:18px;color:#fff" data-words="0.45,0.08,0.7">Every year, families put their <span>life savings</span></div>
+    </div>
+  </section>
+
+  <!-- 2 · 3.0–5.9  The waiting man -->
+  <section class="scene night" data-from="3.4" data-to="6.6">
+    <div class="bgimg"><video src="img/v-man.webm" data-vfrom="3.4" muted playsinline style="width:100%;height:100%;object-fit:cover" data-pan="scale(1.04) | scale(1.0)" data-pan-dur="3.1"></video></div>
+    <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(13,11,8,.88) 0%,rgba(13,11,8,.45) 55%,rgba(13,11,8,.2) 100%)"></div>
+    <div class="abs" style="left:120px;top:0;bottom:0;width:1000px;display:flex;flex-direction:column;justify-content:center;gap:20px">
+      <div class="big" style="color:#fff" data-words="0.15,0.1,0.75">into a <span>promise.</span></div>
+      <div class="rule" style="position:relative;width:380px;background:#F5B14A" data-in="line" data-at="0.8" data-dur="0.8"></div>
+      <div style="font-size:46px;font-weight:600;color:rgba(255,255,255,.88)" data-words="1.1,0.06,0.6">Some are still waiting for possession.</div>
+    </div>
+  </section>
+
+  <!-- 3a · 6.6–10.6  Booked in 2012 -->
+  <section class="scene night" data-from="6.6" data-to="10.6">
+    <div class="bgimg" style="opacity:.32"><video src="img/v-lahore.webm" data-vfrom="6.6" muted playsinline style="width:100%;height:100%;object-fit:cover;filter:grayscale(.5)"></video></div>
+    <div class="vig"></div>
+    <div class="abs" style="left:150px;top:0;bottom:0;width:820px;display:flex;flex-direction:column;justify-content:center;gap:22px">
+      <div class="kick" style="color:rgba(255,255,255,.6)" data-in="track" data-at="0.1" data-dur="1">Plot file · example</div>
+      <div class="mid" style="color:#fff" data-words="0.3,0.09,0.7">Booked in 2012.</div>
+      <div class="mid" style="color:#F5B14A" data-words="1.6,0.08,0.7">Still waiting for possession.</div>
+    </div>
+    <div class="abs" style="left:1130px;top:250px;width:620px;height:580px;background:#F2EBDD;color:#1A1D24;padding:46px 50px;box-shadow:0 40px 80px rgba(0,0,0,.45)" data-in="rise" data-at="0.4" data-dur="1">
+      <div style="font-size:18px;font-weight:800;letter-spacing:.2em;color:#5E5A50">ALLOTMENT FILE</div>
+      <div style="height:2px;background:#D9CFBC;margin:22px 0 30px"></div>
+      <div style="font-size:22px;font-weight:600;color:#5E5A50">Possession promised</div>
+      <div style="font-size:64px;font-weight:800;letter-spacing:-.03em;margin-top:6px">2015</div>
+      <div style="font-size:22px;font-weight:600;color:#5E5A50;margin-top:28px">Today</div>
+      <div style="font-size:120px;font-weight:800;letter-spacing:-.05em;line-height:1;color:#B42318"><span data-nogroup data-count="2012>2026" data-count-at="0.9" data-count-dur="2.4">2012</span></div>
+    </div>
+  </section>
+
+  <!-- 3b · 10.6–14.6  The ad said LDA approved -->
+  <section class="scene ivory" data-from="10.6" data-to="14.6">
+    <div class="abs" style="left:150px;top:0;bottom:0;width:760px;display:flex;flex-direction:column;justify-content:center;gap:22px">
+      <div class="kick" style="color:#1D4A9E" data-in="track" data-at="0.1" data-dur="1">The ad said</div>
+      <div class="mid" data-words="0.3,0.09,0.7">“LDA approved.”</div>
+      <div class="mid" style="color:#B42318" data-words="2.0,0.08,0.7">The record said otherwise.</div>
+    </div>
+    <div class="abs" style="left:1060px;top:230px;width:700px;height:620px;background:#14100B;border-radius:6px;overflow:hidden" data-in="fade-left" data-at="0.3" data-dur="1">
+      <svg width="700" height="620" viewBox="0 0 700 620" style="position:absolute;inset:0"><rect width="700" height="620" fill="url(#g)"/><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1B3F86"/><stop offset="1" stop-color="#0F2557"/></linearGradient></defs><rect x="40" y="250" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="112" y="250" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="184" y="250" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="256" y="250" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="328" y="250" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="400" y="250" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="472" y="250" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="544" y="250" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="616" y="250" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="40" y="308" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="112" y="308" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="184" y="308" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="256" y="308" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="328" y="308" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="400" y="308" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="472" y="308" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="544" y="308" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="616" y="308" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="40" y="366" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="112" y="366" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="184" y="366" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="256" y="366" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="328" y="366" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="400" y="366" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="472" y="366" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="544" y="366" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="616" y="366" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="40" y="424" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="112" y="424" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="184" y="424" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="256" y="424" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="328" y="424" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="400" y="424" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="472" y="424" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="544" y="424" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="616" y="424" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="40" y="482" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="112" y="482" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="184" y="482" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="256" y="482" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="328" y="482" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="400" y="482" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="472" y="482" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="544" y="482" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="616" y="482" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="40" y="540" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="112" y="540" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="184" y="540" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="256" y="540" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="328" y="540" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="400" y="540" width="62" height="48" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><rect x="472" y="540" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="544" y="540" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><rect x="616" y="540" width="62" height="48" rx="3" fill="rgba(245,177,74,.35)" stroke="#F5B14A" stroke-width="1.5"/><text x="472" y="236" fill="#F5B14A" font-family="Plus Jakarta Sans" font-weight="800" font-size="20" letter-spacing="3">PHASE 3</text><text x="40" y="236" fill="rgba(255,255,255,.7)" font-family="Plus Jakarta Sans" font-weight="800" font-size="20" letter-spacing="3">PHASE 1–2</text></svg>
+      <div style="position:absolute;left:44px;right:44px;top:54px;color:#fff">
+        <div style="font-size:20px;font-weight:800;letter-spacing:.2em;opacity:.8">PLOTS FOR SALE · PHASE 3</div>
+        <div style="font-size:52px;font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-top:12px">Easy instalments. Possession soon.</div>
+      </div>
+    </div>
+    <div class="abs" style="left:1180px;top:640px;transform:rotate(-8deg)"><div style="border:6px solid #1F8A4C;color:#1F8A4C;background:rgba(255,255,255,.92);padding:10px 26px;font-size:46px;font-weight:800;letter-spacing:.06em" data-in="scale" data-at="0.9" data-dur="0.35" data-out="blur" data-out-at="1.9" data-out-dur="0.35">LDA APPROVED</div></div>
+    <div class="abs" style="left:1130px;top:630px;transform:rotate(-8deg)"><div style="border:6px solid #B42318;color:#B42318;background:rgba(255,255,255,.95);padding:10px 26px;font-size:46px;font-weight:800;letter-spacing:.04em" data-in="scale" data-at="2.1" data-dur="0.3">PHASE 3: NOT APPROVED</div></div>
+  </section>
+
+  <!-- 3c · 14.6–18.4  Advertised vs approved -->
+  <section class="scene night" data-from="14.6" data-to="18.4">
+    <div class="abs" style="left:150px;right:150px;top:250px">
+      <div class="kick" style="color:rgba(255,255,255,.6)" data-in="track" data-at="0.1" data-dur="1">Advertised vs approved</div>
+      <div style="margin-top:56px;font-size:52px;font-weight:800;letter-spacing:-.03em" data-in="wordblur" data-at="0.3" data-dur="0.6">1,200 kanal <span style="color:rgba(255,255,255,.55);font-weight:600">advertised</span></div>
+      <div style="margin-top:18px;height:46px;width:1620px;background:rgba(255,255,255,.85);transform-origin:left" data-in="line" data-at="0.5" data-dur="1.0"></div>
+      <div style="margin-top:56px;font-size:52px;font-weight:800;letter-spacing:-.03em;color:#F5B14A" data-in="wordblur" data-at="1.4" data-dur="0.6">800 kanal <span style="color:rgba(245,177,74,.7);font-weight:600">approved</span></div>
+      <div style="margin-top:18px;height:46px;width:1080px;background:#F5B14A;transform-origin:left" data-in="line" data-at="1.6" data-dur="1.0"></div>
+      <div style="margin-top:48px;font-size:30px;font-weight:600;color:rgba(255,255,255,.6)" data-in="fade" data-at="2.5">Example figures. Every project is different.</div>
+    </div>
+  </section>
+
+  <!-- 4 · 11.1–15.6  Scattered truth -->
+  <section class="scene ivory" data-from="18.4" data-to="23.4">
+    <div class="src" style="left:150px;top:150px;font-size:40px" data-in="blur" data-at="0.15" data-dur="0.6" data-out="blur" data-out-at="1.9" data-out-dur="0.5">Development authority lists</div>
+    <div class="src" style="left:1180px;top:120px;font-size:30px" data-in="blur" data-at="0.25" data-dur="0.6" data-out="blur" data-out-at="1.95" data-out-dur="0.5">Court records</div>
+    <div class="src" style="left:1420px;top:300px;font-size:46px" data-in="blur" data-at="0.35" data-dur="0.6" data-out="blur" data-out-at="2.0" data-out-dur="0.5">Regulator filings</div>
+    <div class="src" style="left:230px;top:640px;font-size:34px" data-in="blur" data-at="0.45" data-dur="0.6" data-out="blur" data-out-at="2.05" data-out-dur="0.5">Old news reports</div>
+    <div class="src" style="left:1500px;top:620px;font-size:28px" data-in="blur" data-at="0.55" data-dur="0.6" data-out="blur" data-out-at="2.1" data-out-dur="0.5">NOCs</div>
+    <div class="src" style="left:1150px;top:760px;font-size:36px" data-in="blur" data-at="0.65" data-dur="0.6" data-out="blur" data-out-at="2.15" data-out-dur="0.5">Buyer groups</div>
+    <div class="src" style="left:180px;top:760px;font-size:44px" data-in="blur" data-at="0.75" data-dur="0.6" data-out="blur" data-out-at="2.2" data-out-dur="0.5">Layout plans</div>
+    <div class="src" style="left:760px;top:880px;font-size:30px" data-in="blur" data-at="0.85" data-dur="0.6" data-out="blur" data-out-at="2.25" data-out-dur="0.5">Company registers</div>
+    <div class="src" style="left:1480px;top:890px;font-size:32px" data-in="blur" data-at="0.95" data-dur="0.6" data-out="blur" data-out-at="2.3" data-out-dur="0.5">Illegal scheme notices</div>
+    <div class="ctr mid" style="top:400px" data-words="0.3,0.07,0.7,1.9,0.02">The truth was always public.</div>
+    <div class="ctr mid" style="top:480px;color:#1D4A9E" data-words="2.2,0.07,0.75">It was just never in one place.</div>
+  </section>
+
+  <!-- 5 · 15.6–20  Brand reveal + language morph -->
+  <section class="scene cobalt" data-from="23.4" data-to="28.2">
+    <div class="ring" style="left:610px;top:190px;width:700px;height:700px" data-in="scale" data-at="0.05" data-dur="1.6"></div>
+    <div class="ring" style="left:410px;top:-10px;width:1100px;height:1100px;border-color:rgba(255,255,255,.05)" data-in="scale" data-at="0.15" data-dur="1.8"></div>
+    <div class="mark" style="top:330px"><div style="font-size:260px;font-weight:800;letter-spacing:-.06em;line-height:1" data-in="blur" data-at="0.1" data-dur="0.8" data-out="blur" data-out-at="1.85" data-out-dur="0.45">Parakh</div></div>
+    <div class="mark" style="top:240px"><div class="ur" style="font-size:210px;font-weight:700;line-height:1.6" data-in="blur" data-at="2.05" data-dur="0.8">پرکھ</div></div>
+    <div class="ctr" style="top:720px;font-size:30px;font-weight:600;color:rgba(255,255,255,.82)" data-in="fade-up" data-at="0.7" data-dur="0.6" data-out="blur" data-out-at="1.85" data-out-dur="0.45">/pə·rəkh/ · to examine, to test the worth of</div>
+    <div class="ctr ur" style="top:712px;font-size:36px;color:rgba(255,255,255,.85)" data-in="blur" data-at="2.35" data-dur="0.8">پرکھنا · کسی چیز کی اصل قدر جانچنا</div>
+  </section>
+
+  <!-- 6 · 20–23.4  The score -->
+  <section class="scene ivory" data-from="28.2" data-to="31.6">
+    <div class="abs" style="left:160px;top:0;bottom:0;width:820px;display:flex;flex-direction:column;justify-content:center;gap:24px">
+      <div class="kick" style="color:#1D4A9E" data-in="track" data-at="0.1" data-dur="1">Credibility, measured</div>
+      <div class="mid" data-words="0.25,0.06,0.7">Know a project’s credibility</div>
+      <div class="mid" style="color:#1D4A9E" data-words="1.0,0.07,0.7">before you invest.</div>
+    </div>
+    <div class="abs" style="left:1080px;top:250px;width:680px;text-align:center">
+      <div style="font-size:320px;font-weight:800;letter-spacing:-.07em;line-height:.9;color:#B45309" data-in="blur" data-at="0.3" data-dur="0.7"><span data-count="0>58" data-count-at="0.4" data-count-dur="1.6">0</span></div>
+      <div class="rule" style="left:130px;width:420px;top:350px;background:#E3DACA" data-in="line" data-at="0.8" data-dur="0.8"></div>
+      <div style="position:absolute;left:0;right:0;top:380px;font-size:30px;font-weight:700;color:#5E5A50" data-in="fade-up" data-at="1.1" data-dur="0.6">Credibility score, out of 100</div>
+      <div style="position:absolute;left:0;right:0;top:430px;font-size:22px;font-weight:600;color:#9C9384" data-in="fade" data-at="1.5">Every point backed by a source</div>
+    </div>
+  </section>
+
+  <!-- 7 · 23.4–28  Coming soon -->
+  <section class="scene night" data-from="31.6" data-to="36.4">
+    <div class="bgimg"><img src="img/multan.jpg" alt="" style="object-position:50% 40%" data-pan="scale(1.0) | scale(1.05)" data-pan-dur="5"></div>
+    <div class="vig"></div>
+    <div class="mark" style="top:300px;gap:44px">
+      <span style="font-size:190px;font-weight:800;letter-spacing:-.06em" data-in="blur" data-at="0.15" data-dur="0.9">Parakh</span>
+      <span class="ur" style="font-size:130px;font-weight:700" data-in="blur" data-at="0.45" data-dur="0.9">پرکھ</span>
+    </div>
+    <div class="ctr kick" style="top:650px;font-size:30px;color:#F5B14A" data-in="track" data-at="0.9" data-dur="1" data-out="blur" data-out-at="2.1" data-out-dur="0.4">Coming soon</div>
+    <div class="ctr ur" style="top:596px;font-size:64px;font-weight:700;color:#F5B14A" data-in="blur" data-at="2.3" data-dur="0.8">جلد آ رہا ہے</div>
+    <div class="ctr" style="top:800px;font-size:30px;font-weight:600;color:rgba(255,255,255,.62)" data-in="fade" data-at="1.3">Check before you invest.</div>
+  </section>
+
+</div>
+<script>
+(()=>{document.querySelectorAll("[data-words]").forEach(el=>{
+  const [at,st,dur,outAt,ost]=el.dataset.words.split(",").map(Number);
+  const parts=[];el.childNodes.forEach(n=>{const amber=n.nodeType===1;(n.textContent.trim().split(/\s+/)).forEach(w=>w&&parts.push([w,amber]));});
+  el.textContent="";
+  parts.forEach(([w,amber],i)=>{const s=document.createElement("span");s.className="wb";s.textContent=w+(i<parts.length-1?" ":"");if(amber)s.style.color=(el.closest(".ivory")?"#1D4A9E":"#F5B14A");
+    s.dataset.in="wordblur";s.dataset.at=(at+i*st).toFixed(3);s.dataset.dur=String(dur);
+    if(!isNaN(outAt)){s.dataset.out="wordblur";s.dataset.outAt=(outAt+i*(ost||0.03)).toFixed(3);s.dataset.outDur="0.45";}
+    el.appendChild(s);});
+});})();
+</script>
+<script src="film.js"></script>
+<script>
+(()=>{const vids=[...document.querySelectorAll('video[data-vfrom]')];
+ vids.forEach(v=>{v.muted=true;v.preload='auto';v.pause();});
+ const loaded=Promise.all(vids.map(v=>v.readyState>=2?1:new Promise(r=>v.addEventListener('loadeddata',r,{once:true}))));
+ const F=window.__film,orig=F.seek;F.ready=Promise.all([F.ready,loaded]);
+ F.seek=(t)=>{orig(t);return Promise.all(vids.map(v=>{const lt=Math.max(0,Math.min(v.duration-0.04,t-parseFloat(v.dataset.vfrom)));
+   if(Math.abs(v.currentTime-lt)<0.0005)return 0;return new Promise(r=>{v.addEventListener('seeked',()=>requestAnimationFrame(()=>r()),{once:true});v.currentTime=lt;});}));};
+ // live preview: play videos alongside
+ if(!navigator.webdriver){vids.forEach(v=>{const f=parseFloat(v.dataset.vfrom);setTimeout(()=>v.play(),f*1000);});}
+})();
+</script>
+</body>
+</html>

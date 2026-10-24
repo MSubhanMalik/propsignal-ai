@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parakh Report, Direction D</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Nastaliq+Urdu:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF8F2}
+.L h1,.L h2,.L h3,.L p,.L ol,.L ul{margin:0}
+.L-en{font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.55}
+.L-ur{font-family:'Noto Nastaliq Urdu',serif;line-height:2.1}
+.L-en .h{letter-spacing:-0.03em;line-height:1.05}
+.L-ur .h{line-height:1.7}
+a{color:#1D4A9E;text-underline-offset:3px}
+.lat{font-family:'Plus Jakarta Sans',sans-serif}
+.lb{min-height:40px;padding:0 10px;border:0;background:transparent;color:#5E5A50;cursor:pointer;font-size:14px}
+.lb.on{color:#1D4A9E;font-weight:700;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.lb-en{font-family:'Plus Jakarta Sans',sans-serif}.lb-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:14px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px;box-sizing:border-box}
+@media (max-width:900px){.wrap{padding-left:18px;padding-right:18px}}
+.flip{transition:transform .2s}[dir=rtl] .flip{transform:scaleX(-1)}
+.nav a{color:#2A2721;text-decoration:none;font-size:15px;font-weight:600;min-height:44px;display:flex;align-items:center}
+.rb{border-top:8px solid #D97706;background:#FDF0DF;color:#4F2602}
+.rb-high{border-top-color:#D92D20;background:#FDECEA;color:#6E1810}
+.rb-unknown{border-top-color:#8A94A3;background:#EEF1F4;color:#26313D}
+.rb-low{border-top-color:#1F8A4C;background:#E6F4EC;color:#0F4A28}
+.dot{display:inline-block;width:14px;height:14px;flex-shrink:0;background:#D97706}
+.dot-high{background:#D92D20}.dot-unknown{background:#8A94A3}.dot-low{background:#1F8A4C}
+.v-found{font-weight:800;color:#1A1D24}.v-none{color:#7C7668}
+.card{background:#FFFFFF;border:1px solid #E3DACA}
+</style>
+</helmet>
+<div class="{{langClass}}" dir="{{dir}}" lang="{{lang}}" style="width: 100%; min-height: 100vh; box-sizing: border-box; background: #FBF8F2; color: #1A1D24; font-size: 17px; display: flex; flex-direction: column">
+
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E3DACA">
+    <div class="wrap" style="padding-top: 14px; padding-bottom: 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+      <span style="display: flex; align-items: baseline; gap: 10px"><span class="lat" style="font-weight: 800; font-size: 26px; letter-spacing: -0.03em; color: #1D4A9E">Parakh</span><span style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 18px; color: #1D4A9E; line-height: 1">پرکھ</span></span>
+      <nav class="nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px">
+        <sc-for list="{{t.nav}}" as="n" hint-placeholder-count="3"><a href="#">{{n}}</a></sc-for>
+        <span style="font-size: 15px; font-weight: 600; color: #5E5A50">{{t.phone}}</span>
+        <div role="group" aria-label="Language" style="display: flex"><sc-for list="{{langs}}" as="l" hint-placeholder-count="2"><button type="button" class="{{l.cls}}" aria-pressed="{{l.pressed}}" onClick="{{l.pick}}">{{l.label}}</button></sc-for></div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" style="width: 100%; padding-top: 32px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 28px">
+    <nav aria-label="Breadcrumb" style="font-size: 15px; color: #5E5A50; display: flex; gap: 8px"><a href="#">{{t.home}}</a><span aria-hidden="true">›</span><span>{{t.report}}</span></nav>
+
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <h1 class="h" style="font-size: clamp(34px, 4vw, 52px); font-weight: 800">{{v.name}}</h1>
+      <p style="font-size: 17px; color: #4A463D">{{v.dev}} · {{t.checked}} · {{v.srcCount}}</p>
+    </div>
+
+    <section class="{{rbCls}}" style="padding: 32px 36px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
+      <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+        <span style="display: flex; align-items: center; gap: 14px"><span class="{{dotCls}}"></span><span class="h" style="font-size: clamp(32px, 3.6vw, 46px); font-weight: 800">{{label}}</span></span>
+        <p style="font-size: 20px; max-width: 680px">{{sub}}</p>
+      </div>
+      <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 2px; padding-inline-start: 28px; border-inline-start: 1px solid currentColor">
+        <span class="lat" style="font-size: 64px; font-weight: 800; line-height: 1">{{scoreText}}</span>
+        <span style="font-size: 15px; font-weight: 600">{{scoreLine}}</span>
+      </div>
+    </section>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center">
+      <a href="#" style="min-height: 56px; padding: 0 24px; display: inline-flex; align-items: center; gap: 10px; background: #1A1D24; color: #FFFFFF; text-decoration: none; font-size: 17px; font-weight: 800"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path></svg>{{t.share}}</a>
+      <a href="#" style="min-height: 56px; padding: 0 22px; display: inline-flex; align-items: center; border: 2px solid #1D4A9E; color: #1D4A9E; text-decoration: none; font-size: 17px; font-weight: 700">{{t.another}}</a>
+      <a href="#" style="font-size: 15px; font-weight: 600; color: #5E5A50">{{t.correction}}</a>
+    </div>
+
+    <p style="font-size: 20px; max-width: 820px; color: #2A2721">{{v.summary}}</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+      <div style="flex: 2 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 32px">
+        <section style="display: flex; flex-direction: column; gap: 14px">
+          <h2 class="h" style="font-size: 30px; font-weight: 800">{{t.problems}}</h2>
+          <sc-if value="{{noProblems}}" hint-placeholder-val="{{false}}"><p class="card" style="padding: 20px 24px; font-size: 17px; color: #4A463D">{{t.noProblems}}</p></sc-if>
+          <sc-for list="{{problems}}" as="f" hint-placeholder-count="2">
+            <article class="card" style="padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 15px; font-weight: 800; color: #4A463D">{{f.type}}<sc-if value="{{f.serious}}" hint-placeholder-val="{{false}}"><span style="background: #1A1D24; color: #FFFFFF; padding: 2px 10px; font-size: 14px">{{t.serious}}</span></sc-if><sc-if value="{{f.allegation}}" hint-placeholder-val="{{false}}"><span style="border: 1.5px solid #1A1D24; padding: 1px 9px; font-size: 14px">{{t.allegation}}</span></sc-if></span>
+              <h3 style="font-size: 22px; font-weight: 800; line-height: 1.3">{{f.title}}</h3>
+              <p style="font-size: 17px; color: #4A463D">{{f.detail}}</p>
+              <a href="#" style="font-size: 16px; font-weight: 700">{{t.srcWord}}: {{f.src}} · {{f.date}} ↗</a>
+            </article>
+          </sc-for>
+        </section>
+        <section style="display: flex; flex-direction: column; gap: 14px">
+          <h2 class="h" style="font-size: 30px; font-weight: 800">{{t.good}}</h2>
+          <sc-if value="{{noGood}}" hint-placeholder-val="{{false}}"><p class="card" style="padding: 20px 24px; font-size: 17px; color: #4A463D">{{t.noGood}}</p></sc-if>
+          <sc-for list="{{good}}" as="f" hint-placeholder-count="1">
+            <article class="card" style="padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
+              <span style="font-size: 15px; font-weight: 800; color: #4A463D">{{f.type}}</span>
+              <h3 style="font-size: 22px; font-weight: 800; line-height: 1.3">{{f.title}}</h3>
+              <p style="font-size: 17px; color: #4A463D">{{f.detail}}</p>
+              <a href="#" style="font-size: 16px; font-weight: 700">{{t.srcWord}}: {{f.src}} · {{f.date}} ↗</a>
+            </article>
+          </sc-for>
+        </section>
+        <section style="display: flex; flex-direction: column; gap: 12px">
+          <h2 class="h" style="font-size: 30px; font-weight: 800">{{t.sourcesTitle}}</h2>
+          <div style="border-top: 2px solid #1A1D24">
+            <sc-for list="{{sources}}" as="s" hint-placeholder-count="3">
+              <a href="#" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid #E3DACA; text-decoration: none; color: #1A1D24">
+                <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 700">{{s.site}}</span><span style="font-size: 15px; color: #4A463D">{{s.title}}</span></span>
+                <span style="font-size: 15px; font-weight: 700; color: #1D4A9E">{{s.date}} ↗</span>
+              </a>
+            </sc-for>
+          </div>
+        </section>
+      </div>
+
+      <aside style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+        <section style="background: #1D4A9E; color: #FFFFFF; padding: 26px 26px 22px; display: flex; flex-direction: column; gap: 14px">
+          <h2 class="h" style="font-size: 26px; font-weight: 800">{{t.next}}</h2>
+          <ol style="list-style: none; padding: 0; display: flex; flex-direction: column">
+            <sc-for list="{{nextItems}}" as="n" hint-placeholder-count="3">
+              <li style="display: flex; gap: 14px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.25)"><span class="lat" style="font-size: 22px; font-weight: 800; width: 22px; flex-shrink: 0">{{n.n}}</span><span style="font-size: 17px">{{n.text}}</span></li>
+            </sc-for>
+          </ol>
+        </section>
+        <section class="card" style="padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
+          <h2 class="h" style="font-size: 22px; font-weight: 800">{{t.checkedTitle}}</h2>
+          <sc-for list="{{checks}}" as="c" hint-placeholder-count="6">
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid #EFE8DA; font-size: 16px"><span>{{c.k}}</span><span class="{{c.cls}}">{{c.v}}</span></div>
+          </sc-for>
+        </section>
+        <section class="card" style="padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
+          <h2 class="h" style="font-size: 22px; font-weight: 800">{{t.notChecked}}</h2>
+          <ul style="padding-inline-start: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #4A463D">
+            <sc-for list="{{t.notCheckedItems}}" as="x" hint-placeholder-count="3"><li>{{x}}</li></sc-for>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <p style="border: 1px solid #DCD2BF; background: #F2EBDD; padding: 18px 22px; font-size: 16px; color: #3A352C">{{t.note}}</p>
+  </main>
+
+  <footer style="margin-top: auto; background: #14100B; color: #CFC6B6">
+    <div class="wrap" style="padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 15px">
+      <span class="lat" style="font-weight: 800; font-size: 22px; color: #FFFFFF">Parakh</span>
+      <span>{{t.phone}}</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"variant":{"editor":"enum","options":["medium","high","unknown"],"default":"medium"},"startLang":{"editor":"enum","options":["en","ur"],"default":"en"},"$preview":{"width":1280,"height":2500}}'>
+var PR = {
+  en: { dir: 'ltr', name: 'English', nav: ['How we check', 'Help'], phone: 'WhatsApp: [YOUR NUMBER]', home: 'Home', report: 'Report', checked: 'Checked 24 Oct 2026', share: 'Share on WhatsApp', another: 'Check another project', correction: 'Something wrong? Request a correction', problems: 'Problems found', good: 'Good signs', noProblems: 'We found no problems reported online.', noGood: 'We found no good signs online.', serious: 'Serious', allegation: 'Allegation', srcWord: 'Source', sourcesTitle: 'Where we found this', next: 'What you should do next', checkedTitle: 'What we checked', notChecked: 'What we did not check', notCheckedItems: ['Land records and title at the registry', 'A visit to the site', 'The developer’s finances'], vals: { found: 'Found', none: 'Nothing found' }, checkNames: ['Court cases', 'Fraud complaints', 'Late possession', 'Buyer complaints', 'Approved by authority', 'In the news'], outOf: 'out of 100', noScore: 'No score', note: 'This report is based on public information online. It is not legal advice. Always check with the development authority before paying.',
+    labels: { medium: 'Some problems found – check carefully', high: 'Serious problems found', unknown: 'Not enough information online' },
+    subs: { medium: 'We found problems you should ask about before you pay.', high: 'Do not pay until these problems are checked with the authority and a lawyer.', unknown: 'We could not find enough public information to judge this project.' },
+    nextBase: ['Ask the developer for the NOC and the approved layout plan.', 'Check the project with the development authority (LDA, CDA, RDA).', 'Speak to a property lawyer before you pay anything.'],
+    nextExtra: { high: 'Do not pay any money until these problems are resolved.', unknown: 'Visit the site and ask nearby residents about the developer.' },
+    v: {
+      medium: { name: 'Sample Gardens, Lahore', dev: 'by Sample Builders (example)', srcCount: '9 sources', score: 58, summary: 'Buyers say possession is about three years late. The layout plan is listed on the LDA website, but some buyers complain about extra charges.', checks: ['none', 'none', 'found', 'found', 'found', 'found'],
+        problems: [{ type: 'Late possession', serious: true, title: 'Plots promised for 2021 are still not handed over', detail: 'Several buyers told a newspaper they are still waiting for possession three years after the promised date.', src: 'Dawn', date: 'Mar 2026' }, { type: 'Buyer complaints', title: 'Complaints about extra development charges', detail: 'Buyers in a Facebook group say they were asked to pay charges that were not in the booking form.', src: 'Facebook group', date: 'Jan 2026' }],
+        good: [{ type: 'Approved by authority', title: 'The layout plan is listed on the LDA website', detail: 'The project appears on the authority’s list of approved schemes.', src: 'LDA website', date: 'Oct 2026' }],
+        sources: [{ site: 'Dawn', title: 'Buyers still waiting for possession in Lahore scheme', date: 'Mar 2026' }, { site: 'Facebook group', title: 'Post about extra development charges', date: 'Jan 2026' }, { site: 'LDA website', title: 'List of approved housing schemes', date: 'Oct 2026' }] },
+      high: { name: 'Sample Valley Phase 2, Multan', dev: 'by Sample Developers (example)', srcCount: '14 sources', score: 22, summary: 'The development authority lists this scheme as illegal, and buyers have gone to court over refunds. There are also reports of payments taken for plots that do not exist.', checks: ['found', 'found', 'none', 'found', 'none', 'found'],
+        problems: [{ type: 'Government notice', serious: true, title: 'Listed as an illegal scheme by the development authority', detail: 'The scheme appears on the authority’s published list of illegal housing schemes.', src: 'MDA website', date: 'Sep 2026' }, { type: 'Court case', serious: true, title: 'Buyers have filed a case over refunds', detail: 'A court listing shows buyers asking the court to order refunds from the developer.', src: 'Court cause list', date: 'Aug 2026' }, { type: 'Fraud complaint', serious: true, allegation: true, title: 'Buyers report payments taken for plots that do not exist', detail: 'Several buyers told a TV channel they paid instalments for plots that were never allotted. This is an allegation, not a court ruling.', src: 'The News', date: 'Jul 2026' }, { type: 'Buyer complaints', title: 'Many complaints about the office closing', detail: 'Buyers in Facebook groups say the site office has been closed for months.', src: 'Facebook group', date: 'Jun 2026' }],
+        good: [],
+        sources: [{ site: 'MDA website', title: 'List of illegal housing schemes', date: 'Sep 2026' }, { site: 'Court cause list', title: 'Case listing: buyers v. developer', date: 'Aug 2026' }, { site: 'The News', title: 'Buyers say they paid for plots that were never allotted', date: 'Jul 2026' }, { site: 'Facebook group', title: 'Posts about the closed site office', date: 'Jun 2026' }] },
+      unknown: { name: 'Sample Enclave, Islamabad', dev: 'Developer not found online', srcCount: '2 sources', score: null, summary: 'We found very little about this project online. That is not a good or a bad sign by itself: new or small projects often have no public record yet.', checks: ['none', 'none', 'none', 'none', 'none', 'none'],
+        problems: [], good: [],
+        sources: [{ site: 'Classified ads website', title: 'Plot listing that mentions the project name', date: 'Oct 2026' }, { site: 'Facebook page', title: 'Project page with a few posts', date: 'Sep 2026' }] }
+    } },
+  ur: { dir: 'rtl', name: 'اردو', nav: ['ہم کیسے پرکھتے ہیں', 'مدد'], phone: 'واٹس ایپ: [YOUR NUMBER]', home: 'ہوم', report: 'رپورٹ', checked: '24 اکتوبر 2026 کو پرکھا گیا', share: 'واٹس ایپ پر شیئر کریں', another: 'کوئی اور پروجیکٹ پرکھیں', correction: 'کچھ غلط ہے؟ درستی کی درخواست کریں', problems: 'جو مسائل ملے', good: 'اچھی باتیں', noProblems: 'انٹرنیٹ پر کوئی مسئلہ رپورٹ ہوا نہیں ملا۔', noGood: 'انٹرنیٹ پر کوئی اچھی بات نہیں ملی۔', serious: 'سنگین', allegation: 'الزام', srcWord: 'ذریعہ', sourcesTitle: 'یہ معلومات کہاں سے ملیں', next: 'آپ کو آگے کیا کرنا چاہیے', checkedTitle: 'ہم نے کیا پرکھا', notChecked: 'ہم نے کیا نہیں پرکھا', notCheckedItems: ['رجسٹری میں زمین کا ریکارڈ اور ملکیت', 'سائٹ کا دورہ', 'ڈویلپر کی مالی حالت'], vals: { found: 'ملا', none: 'کچھ نہیں ملا' }, checkNames: ['عدالتی مقدمات', 'فراڈ کی شکایات', 'قبضے میں تاخیر', 'خریداروں کی شکایات', 'ادارے سے منظور شدہ', 'خبروں میں'], outOf: '100 میں سے', noScore: 'کوئی اسکور نہیں', note: 'یہ رپورٹ انٹرنیٹ پر موجود عام معلومات پر مبنی ہے، قانونی مشورہ نہیں۔ پیسے دینے سے پہلے ہمیشہ ترقیاتی ادارے سے معلوم کریں۔',
+    labels: { medium: 'کچھ مسائل ملے – احتیاط سے جانچیں', high: 'سنگین مسائل ملے', unknown: 'انٹرنیٹ پر کافی معلومات نہیں' },
+    subs: { medium: 'ہمیں ایسے مسائل ملے جن کے بارے میں پیسے دینے سے پہلے ضرور پوچھیں۔', high: 'جب تک ادارے اور وکیل سے یہ مسائل نہ جانچ لیں، پیسے نہ دیں۔', unknown: 'اس پروجیکٹ کو پرکھنے کے لیے ہمیں کافی عام معلومات نہیں ملیں۔' },
+    nextBase: ['ڈویلپر سے NOC اور منظور شدہ لے آؤٹ پلان مانگیں۔', 'ترقیاتی ادارے (LDA، CDA، RDA) سے پروجیکٹ کے بارے میں معلوم کریں۔', 'کوئی بھی رقم دینے سے پہلے پراپرٹی کے وکیل سے بات کریں۔'],
+    nextExtra: { high: 'جب تک یہ مسائل حل نہ ہوں، کوئی رقم نہ دیں۔', unknown: 'سائٹ پر جائیں اور قریب رہنے والوں سے ڈویلپر کے بارے میں پوچھیں۔' },
+    v: {
+      medium: { name: 'سیمپل گارڈنز، لاہور', dev: 'سیمپل بلڈرز (مثال)', srcCount: '9 ذرائع', score: 58, summary: 'خریداروں کے مطابق قبضہ تقریباً تین سال تاخیر کا شکار ہے۔ لے آؤٹ پلان LDA کی ویب سائٹ پر موجود ہے، لیکن کچھ خریدار اضافی چارجز کی شکایت کرتے ہیں۔', checks: ['none', 'none', 'found', 'found', 'found', 'found'],
+        problems: [{ type: 'قبضے میں تاخیر', serious: true, title: '2021 کے وعدے والے پلاٹ ابھی تک حوالے نہیں ہوئے', detail: 'کئی خریداروں نے ایک اخبار کو بتایا کہ وعدے کی تاریخ کے تین سال بعد بھی وہ قبضے کا انتظار کر رہے ہیں۔', src: 'ڈان', date: 'مارچ 2026' }, { type: 'خریداروں کی شکایات', title: 'اضافی ڈویلپمنٹ چارجز کی شکایات', detail: 'ایک فیس بک گروپ میں خریدار کہتے ہیں کہ ان سے ایسے چارجز مانگے گئے جو بکنگ فارم میں نہیں تھے۔', src: 'فیس بک گروپ', date: 'جنوری 2026' }],
+        good: [{ type: 'ادارے سے منظور شدہ', title: 'لے آؤٹ پلان LDA کی ویب سائٹ پر موجود ہے', detail: 'یہ پروجیکٹ ادارے کی منظور شدہ اسکیموں کی فہرست میں شامل ہے۔', src: 'LDA ویب سائٹ', date: 'اکتوبر 2026' }],
+        sources: [{ site: 'ڈان', title: 'لاہور کی اسکیم میں خریدار اب بھی قبضے کے منتظر', date: 'مارچ 2026' }, { site: 'فیس بک گروپ', title: 'اضافی ڈویلپمنٹ چارجز کے بارے میں پوسٹ', date: 'جنوری 2026' }, { site: 'LDA ویب سائٹ', title: 'منظور شدہ ہاؤسنگ اسکیموں کی فہرست', date: 'اکتوبر 2026' }] },
+      high: { name: 'سیمپل ویلی فیز 2، ملتان', dev: 'سیمپل ڈویلپرز (مثال)', srcCount: '14 ذرائع', score: 22, summary: 'ترقیاتی ادارہ اس اسکیم کو غیر قانونی قرار دیتا ہے، اور خریدار رقم کی واپسی کے لیے عدالت گئے ہیں۔ ایسے پلاٹوں کی رقم لینے کی رپورٹس بھی ہیں جو موجود ہی نہیں۔', checks: ['found', 'found', 'none', 'found', 'none', 'found'],
+        problems: [{ type: 'سرکاری نوٹس', serious: true, title: 'ترقیاتی ادارے نے غیر قانونی اسکیم قرار دیا', detail: 'یہ اسکیم ادارے کی شائع کردہ غیر قانونی ہاؤسنگ اسکیموں کی فہرست میں شامل ہے۔', src: 'MDA ویب سائٹ', date: 'ستمبر 2026' }, { type: 'عدالتی مقدمہ', serious: true, title: 'خریداروں نے رقم کی واپسی کا مقدمہ دائر کیا', detail: 'عدالتی فہرست کے مطابق خریدار ڈویلپر سے رقم واپس دلوانے کی درخواست کر رہے ہیں۔', src: 'عدالتی کاز لسٹ', date: 'اگست 2026' }, { type: 'فراڈ کی شکایت', serious: true, allegation: true, title: 'خریداروں کے مطابق ایسے پلاٹوں کی رقم لی گئی جو موجود نہیں', detail: 'کئی خریداروں نے ایک ٹی وی چینل کو بتایا کہ انہوں نے ایسے پلاٹوں کی قسطیں دیں جو کبھی الاٹ نہیں ہوئے۔ یہ الزام ہے، عدالتی فیصلہ نہیں۔', src: 'دی نیوز', date: 'جولائی 2026' }, { type: 'خریداروں کی شکایات', title: 'دفتر بند ہونے کی بہت سی شکایات', detail: 'فیس بک گروپس میں خریدار کہتے ہیں کہ سائٹ آفس کئی مہینوں سے بند ہے۔', src: 'فیس بک گروپ', date: 'جون 2026' }],
+        good: [],
+        sources: [{ site: 'MDA ویب سائٹ', title: 'غیر قانونی ہاؤسنگ اسکیموں کی فہرست', date: 'ستمبر 2026' }, { site: 'عدالتی کاز لسٹ', title: 'مقدمہ: خریدار بنام ڈویلپر', date: 'اگست 2026' }, { site: 'دی نیوز', title: 'خریداروں کے مطابق پلاٹ کبھی الاٹ نہیں ہوئے', date: 'جولائی 2026' }, { site: 'فیس بک گروپ', title: 'بند سائٹ آفس کے بارے میں پوسٹس', date: 'جون 2026' }] },
+      unknown: { name: 'سیمپل انکلیو، اسلام آباد', dev: 'ڈویلپر انٹرنیٹ پر نہیں ملا', srcCount: '2 ذرائع', score: null, summary: 'ہمیں اس پروجیکٹ کے بارے میں انٹرنیٹ پر بہت کم معلومات ملیں۔ یہ بذاتِ خود اچھی یا بری علامت نہیں: نئے یا چھوٹے پروجیکٹس کا اکثر کوئی عوامی ریکارڈ نہیں ہوتا۔', checks: ['none', 'none', 'none', 'none', 'none', 'none'],
+        problems: [], good: [],
+        sources: [{ site: 'اشتہارات کی ویب سائٹ', title: 'پلاٹ کا اشتہار جس میں پروجیکٹ کا نام ہے', date: 'اکتوبر 2026' }, { site: 'فیس بک پیج', title: 'پروجیکٹ کا پیج، چند پوسٹس کے ساتھ', date: 'ستمبر 2026' }] }
+    } }
+};
+class Component extends DCLogic {
+  renderVals() {
+    var k = (this.state && this.state.lang) || this.props.startLang || 'en';
+    var vr = this.props.variant || 'medium';
+    var t = PR[k]; var v = t.v[vr]; var self = this;
+    var next = (t.nextExtra[vr] ? [t.nextExtra[vr]] : []).concat(t.nextBase);
+    return {
+      t: t, v: v, lang: k, dir: t.dir, langClass: 'L L-' + k,
+      langs: ['en', 'ur'].map(function (c) { return { label: PR[c].name, cls: 'lb lb-' + c + (c === k ? ' on' : ''), pressed: c === k ? 'true' : 'false', pick: function () { self.setState({ lang: c }); } }; }),
+      rbCls: 'rb rb-' + vr, dotCls: 'dot dot-' + vr,
+      label: t.labels[vr], sub: t.subs[vr],
+      scoreText: v.score === null ? '—' : String(v.score),
+      scoreLine: v.score === null ? t.noScore : t.outOf,
+      problems: v.problems.map(function (f) { return { type: f.type, title: f.title, detail: f.detail, src: f.src, date: f.date, serious: !!f.serious, allegation: !!f.allegation }; }),
+      good: v.good, noProblems: v.problems.length === 0, noGood: v.good.length === 0,
+      sources: v.sources,
+      nextItems: next.map(function (s, i) { return { n: String(i + 1), text: s }; }),
+      checks: t.checkNames.map(function (n, i) { return { k: n, v: t.vals[v.checks[i]], cls: 'v-' + v.checks[i] }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

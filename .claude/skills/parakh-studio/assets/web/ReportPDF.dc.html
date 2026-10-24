@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parakh Report PDF</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Nastaliq+Urdu:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#E7E1D6}
+.doc{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#1A1D24;font-size:12px;line-height:1.5;display:flex;flex-direction:column;align-items:center;gap:40px;padding:0;background:#E7E1D6}
+.doc p,.doc h1,.doc h2,.doc h3,.doc ol,.doc ul{margin:0}
+.pg{width:794px;height:1123px;box-sizing:border-box;background:#FFFFFF;position:relative;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(20,16,11,.12)}
+.in{padding:0 48px}
+.run{display:flex;align-items:center;justify-content:space-between;padding:22px 48px 14px;border-bottom:1px solid #E3DACA;font-size:10.5px;color:#5E5A50}
+.logo{font-weight:800;letter-spacing:-0.03em;color:#1D4A9E}
+.ur{font-family:'Noto Nastaliq Urdu',serif;line-height:1}
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 48px 20px;border-top:1px solid #E3DACA;font-size:9.5px;color:#7C7668}
+.kick{font-size:10px;font-weight:700;letter-spacing:.1em;color:#1D4A9E;text-transform:uppercase}
+.h2{font-size:24px;font-weight:800;letter-spacing:-0.025em;line-height:1.15}
+.h3{font-size:15px;font-weight:800;letter-spacing:-0.01em;line-height:1.3}
+.mut{color:#5E5A50}
+.lnk{color:#1D4A9E;font-weight:600}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:4px;font-size:10.5px;font-weight:700;white-space:nowrap}
+.ok{color:#1F8A4C;background:#E6F4EC}.warn{color:#B45309;background:#FDF0DF}.bad{color:#B42318;background:#FDECEA}.none{color:#5B6573;background:#EEF1F4}
+table{border-collapse:collapse;width:100%}
+th{background:#F2EBDD;text-align:left;font-size:9.5px;font-weight:700;letter-spacing:.08em;color:#5E5A50;text-transform:uppercase;padding:8px 10px}
+td{border-top:1px solid #EFE8DA;padding:10px;vertical-align:top;font-size:11.5px}
+.box{border:1px solid #E3DACA;background:#FFFFFF}
+.sand{background:#F2EBDD}
+.docpg{width:58px;height:70px;background:#FFFFFF;border:1px solid #CFC6B6;box-sizing:border-box;padding:9px 8px;display:flex;flex-direction:column;gap:5px}
+.docpg span{display:block;height:3px;background:#CFC6B6}
+.docpg span:nth-child(1){width:26px;height:5px;background:#1D4A9E}.docpg span:nth-child(2){width:40px}.docpg span:nth-child(3){width:34px}.docpg span:nth-child(4){width:40px}.docpg span:nth-child(5){width:26px}
+.docpg-miss{border:1.5px dashed #CFC6B6}.docpg-miss span,.docpg-miss span:nth-child(1){background:#EFE8DA}
+.tdot{width:12px;height:12px;border-radius:999px;flex-shrink:0}.tdot-ok{background:#1F8A4C}.tdot-warn{background:#D97706}.tdot-bad{background:#D92D20}.tdot-none{background:#1D4A9E}
+.tline{flex:1;height:2px;background:#CFC6B6}.tline-end{background:transparent}
+.ty{font-size:11.5px;color:#1A1D24}.ty-now{color:#1D4A9E}
+@media print{
+  body,.doc{background:#FFFFFF}
+  .doc{gap:0}
+  .pg{box-shadow:none;page-break-after:always;break-after:page}
+  @page{size:A4;margin:0}
+}
+</style>
+</helmet>
+<div class="doc">
+
+  <!-- ================= PAGE 1 · COVER + SUMMARY ================= -->
+  <section class="pg" aria-label="Page 1">
+    <div style="position:relative;height:350px;color:#FFFFFF;flex-shrink:0">
+      <img src="/_blob/dd4e07ee51876740828133a6cfdc7348" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,16,10,.93) 0%,rgba(22,16,10,.8) 55%,rgba(22,16,10,.55) 100%)"></div>
+      <div style="position:relative;padding:28px 48px 58px;display:flex;flex-direction:column;height:100%;box-sizing:border-box">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="display:flex;align-items:baseline;gap:8px"><span class="logo" style="color:#FFFFFF;font-size:22px">Parakh</span><span class="ur" style="font-size:15px">پرکھ</span></span>
+          <span style="font-size:10px;font-weight:700;letter-spacing:.1em;padding:3px 8px;background:rgba(255,255,255,.14)">EXAMPLE REPORT · ALL NAMES AND NUMBERS ARE MADE UP</span>
+        </div>
+        <p style="margin-top:36px;font-size:11px;font-weight:700;letter-spacing:.12em;opacity:.8">PROPERTY CHECK REPORT</p>
+        <h1 style="margin-top:6px;font-size:40px;font-weight:800;letter-spacing:-0.03em;line-height:1.08">Sample Gardens, Lahore</h1>
+        <p style="margin-top:8px;font-size:14px;font-weight:500;opacity:.9">Housing scheme on Raiwind Road · by Sample Builders (Pvt) Ltd (example)</p>
+        <div style="margin-top:auto;display:flex;gap:28px;font-size:11px;opacity:.85">
+          <span><b>Report</b> PK-LHR-000123</span><span><b>Checked</b> 24 Oct 2026, 10:42 am</span><span><b>Sources</b> 8 government records · 14 others</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="in" style="margin-top:-36px;position:relative">
+      <div class="box" style="display:flex;border-color:#D9CFBC">
+        
+        <div style="flex:1;padding:20px 24px;display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;gap:20px;align-items:center">
+            <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+              <span class="chip warn" style="align-self:flex-start;letter-spacing:.08em">RESULT</span>
+              <p style="font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#B45309;line-height:1.2">Some problems found – check carefully</p>
+              <p class="mut" style="font-size:12.5px">The scheme and its NOC are approved by LDA, but Phase 3, which is being sold now, is not in the approved layout plan. Buyers also report possession is three years late.</p>
+            </div>
+            <div style="text-align:right;flex-shrink:0"><p style="font-size:56px;font-weight:800;letter-spacing:-0.04em;color:#B45309;line-height:1">58</p><p class="mut" style="font-size:10.5px;font-weight:600">out of 100</p></div>
+          </div>
+          <div style="display:flex;border-top:1px solid #EFE8DA">
+            <div style="flex:1;padding:12px 12px 0 0;display:flex;flex-direction:column;gap:5px"><span class="kick" style="color:#7C7668">LDA approval</span><b style="font-size:12.5px">Approved scheme</b><span class="chip ok" style="align-self:flex-start">✓ Approved</span></div>
+            <div style="flex:1;padding:12px 12px 0;border-left:1px solid #EFE8DA;display:flex;flex-direction:column;gap:5px"><span class="kick" style="color:#7C7668">NOC</span><b style="font-size:12.5px">Issued Jun 2018</b><span class="chip ok" style="align-self:flex-start">✓ Issued</span></div>
+            <div style="flex:1;padding:12px 12px 0;border-left:1px solid #EFE8DA;display:flex;flex-direction:column;gap:5px"><span class="kick" style="color:#7C7668">Layout plan</span><b style="font-size:12.5px">Phase 1–2 only</b><span class="chip warn" style="align-self:flex-start">! Partly</span></div>
+            <div style="flex:1;padding:12px 12px 0;border-left:1px solid #EFE8DA;display:flex;flex-direction:column;gap:5px"><span class="kick" style="color:#7C7668">Court cases</span><b style="font-size:12.5px">1 pending</b><span class="chip bad" style="align-self:flex-start">✕ 1 found</span></div>
+            <div style="flex:1;padding:12px 0 0 12px;border-left:1px solid #EFE8DA;display:flex;flex-direction:column;gap:5px"><span class="kick" style="color:#7C7668">Complaints</span><b style="font-size:12.5px">14 online</b><span class="chip warn" style="align-self:flex-start">! 14</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="in" style="margin-top:26px;display:flex;gap:24px">
+      <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+        <div>
+          <p class="kick">In short</p>
+          <p style="margin-top:6px;font-size:13.5px;font-weight:500;line-height:1.55">The project is real and LDA has approved part of it. The main risk is <b>Phase 3</b>: it is being sold, but it is not in the approved plan. If you are buying, make sure your plot is in Phase 1 or 2, and get that in writing.</p>
+        </div>
+        <div>
+          <p class="kick">Official records at a glance</p>
+          <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px"><span class="chip ok">✓ 4 OK</span><span class="chip warn">! 2 need attention</span><span class="chip bad">✕ 1 problem</span><span class="chip none">– 1 check yourself</span></div>
+          <p class="mut" style="margin-top:8px;font-size:11.5px">Details on page 2. Each record has a link so you can check it yourself.</p>
+        </div>
+        <div>
+          <p class="kick">What is in this report</p>
+          <ol style="margin-top:6px;padding-left:16px;font-size:11.5px;display:flex;flex-direction:column;gap:2px">
+            <li>Summary and what to do next · <span class="mut">page 1</span></li>
+            <li>Official records from government websites · <span class="mut">page 2</span></li>
+            <li>Documents, and the ads compared with the records · <span class="mut">page 3</span></li>
+            <li>Timeline, problems found and good signs · <span class="mut">page 4</span></li>
+            <li>Developer, their reply, and every source · <span class="mut">page 5</span></li>
+          </ol>
+        </div>
+      </div>
+      <div style="width:290px;flex-shrink:0;background:#1D4A9E;color:#FFFFFF;padding:18px 20px;display:flex;flex-direction:column;gap:2px">
+        <p style="font-size:15px;font-weight:800;letter-spacing:-0.01em;margin-bottom:6px">What you should do next</p>
+        <div style="display:flex;gap:10px;padding:8px 0;border-top:1px solid #4B6DB3"><b>1</b><span><b>Make sure your plot is in Phase 1 or 2.</b> Ask for the approved plan with your plot marked.</span></div>
+        <div style="display:flex;gap:10px;padding:8px 0;border-top:1px solid #4B6DB3"><b>2</b><span>Ask the developer for the NOC and the PRERA registration.</span></div>
+        <div style="display:flex;gap:10px;padding:8px 0;border-top:1px solid #4B6DB3"><b>3</b><span>Check the project at the LDA office before paying.</span></div>
+        <div style="display:flex;gap:10px;padding:8px 0;border-top:1px solid #4B6DB3"><b>4</b><span>Speak to a property lawyer before you pay anything.</span></div>
+      </div>
+    </div>
+
+    <div class="in" style="margin-top:22px">
+      <div class="sand" style="display:flex;gap:16px;align-items:center;padding:14px 16px">
+        <div style="width:64px;height:64px;flex-shrink:0;border:1.5px dashed #9C9384;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#7C7668;background:#FFFFFF">QR CODE</div>
+        <div style="flex:1">
+          <p style="font-size:12.5px;font-weight:800">Is this report genuine? Scan to check.</p>
+          <p class="mut" style="font-size:11px">PDFs can be edited. Scan the code or open <b>[parakh-domain]/r/PK-LHR-000123</b> to see the original report on our website, with any updates or corrections since this date.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot"><span>Parakh · Public information online only. Not legal advice. Parakh does not verify or guarantee any project.</span><span>Page 1 of 5</span></div>
+  </section>
+
+  <!-- ================= PAGE 2 · OFFICIAL RECORDS ================= -->
+  <section class="pg" aria-label="Page 2">
+    <div class="run"><span><span class="logo" style="font-size:14px">Parakh</span>&nbsp;&nbsp;Sample Gardens, Lahore · Report PK-LHR-000123</span><span class="chip warn">! Some problems found · 58</span></div>
+    <div class="in" style="padding-top:26px;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px">
+        <div><p class="kick">From government websites</p><h2 class="h2" style="margin-top:4px">Official records</h2>
+          <p class="mut" style="margin-top:6px;max-width:470px">We checked these government sources directly. Each line shows what the record says, when we checked it, and a link so you can check it yourself.</p></div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end;max-width:220px"><span class="chip ok">✓ 4 OK</span><span class="chip warn">! 2 attention</span><span class="chip bad">✕ 1 problem</span><span class="chip none">– 1 yourself</span></div>
+      </div>
+      <table class="box">
+        <thead><tr><th style="width:120px">What we checked</th><th style="width:150px">Government source</th><th>What the record says</th><th style="width:96px">Status</th></tr></thead>
+        <tbody>
+          <tr><td><b>Scheme status</b><br><span class="mut" style="font-size:10.5px">Is it an approved housing scheme?</span></td><td><b>Lahore Development Authority (LDA)</b><br><span class="lnk" style="font-size:10.5px">Approved schemes list ↗</span></td><td>Listed as an approved private housing scheme.</td><td><span class="chip ok">✓ Approved</span></td></tr>
+          <tr><td><b>NOC</b><br><span class="mut" style="font-size:10.5px">No objection certificate</span></td><td><b>LDA</b><br><span class="lnk" style="font-size:10.5px">NOC details ↗</span></td><td>NOC issued 12 Jun 2018.<br><span class="mut">Ref: LDA/HS/0000 (example)</span></td><td><span class="chip ok">✓ Issued</span></td></tr>
+          <tr><td><b>Layout plan</b><br><span class="mut" style="font-size:10.5px">Approved map of plots</span></td><td><b>LDA</b><br><span class="lnk" style="font-size:10.5px">Approved layout plans ↗</span></td><td>Approved for Phase 1 and 2 (800 kanal). <b>Phase 3, which is being sold now, is not in the approved plan.</b></td><td><span class="chip warn">! Partly approved</span></td></tr>
+          <tr><td><b>Illegal schemes list</b><br><span class="mut" style="font-size:10.5px">Is it on the warning list?</span></td><td><b>LDA</b><br><span class="lnk" style="font-size:10.5px">Illegal schemes list ↗</span></td><td>Not on the list.</td><td><span class="chip ok">✓ Not on list</span></td></tr>
+          <tr><td><b>Real estate regulator</b><br><span class="mut" style="font-size:10.5px">Project registration</span></td><td><b>Punjab Real Estate Regulatory Authority (PRERA)</b><br><span class="lnk" style="font-size:10.5px">Registered projects ↗</span></td><td>We could not find this project in the registered projects list.</td><td><span class="chip warn">! Not found</span></td></tr>
+          <tr><td><b>Developer company</b><br><span class="mut" style="font-size:10.5px">Is the company real?</span></td><td><b>SECP</b><br><span class="lnk" style="font-size:10.5px">Company search ↗</span></td><td>Sample Builders (Pvt) Ltd is an active company, registered in 2014.</td><td><span class="chip ok">✓ Active</span></td></tr>
+          <tr><td><b>Land ownership</b><br><span class="mut" style="font-size:10.5px">Who owns the land?</span></td><td><b>Punjab Land Records Authority (PLRA)</b><br><span class="lnk" style="font-size:10.5px">Land records ↗</span></td><td>Ownership is not fully online. Check at an Arazi Record Centre with the khasra numbers from the developer.</td><td><span class="chip none">– Check yourself</span></td></tr>
+          <tr><td><b>Court cases</b><br><span class="mut" style="font-size:10.5px">Cases naming the developer</span></td><td><b>Lahore High Court</b><br><span class="lnk" style="font-size:10.5px">Case search ↗</span></td><td>1 pending case by buyers asking for refunds (filed 2025).</td><td><span class="chip bad">✕ 1 case</span></td></tr>
+        </tbody>
+      </table>
+      <p class="mut" style="font-size:10.5px">All records checked on 24 Oct 2026. Government websites can be out of date. A record online is not the same as seeing the original documents at the authority’s office.</p>
+
+      <div class="sand" style="padding:16px 18px;display:flex;gap:20px">
+        <div style="flex:1"><p class="h3">How to read the status</p>
+          <div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;font-size:11px">
+            <span><span class="chip ok">✓ OK</span>&nbsp; The record supports the project.</span>
+            <span><span class="chip warn">! Attention</span>&nbsp; Ask about this before paying.</span>
+            <span><span class="chip bad">✕ Problem</span>&nbsp; A serious issue in the record.</span>
+            <span><span class="chip none">– Yourself</span>&nbsp; Not online. Check in person.</span>
+          </div></div>
+      </div>
+
+      <div class="box" style="padding:16px 18px">
+        <p class="h3">Other authorities, for projects in other cities</p>
+        <p class="mut" style="margin-top:4px;font-size:11px">The records we check depend on where the project is. For this project, LDA and PRERA apply.</p>
+        <div style="margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:10.5px">
+          <span><b>Islamabad</b><br><span class="mut">CDA approved and illegal schemes lists</span></span>
+          <span><b>Rawalpindi</b><br><span class="mut">RDA housing schemes</span></span>
+          <span><b>Multan</b><br><span class="mut">MDA housing schemes</span></span>
+          <span><b>Karachi</b><br><span class="mut">SBCA approvals, KDA and MDA</span></span>
+          <span><b>Faisalabad</b><br><span class="mut">FDA housing schemes</span></span>
+          <span><b>All of Pakistan</b><br><span class="mut">SECP company search, court case search</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Checked 24 Oct 2026, 10:42 am · Verify at [parakh-domain]/r/PK-LHR-000123</span><span>Page 2 of 5</span></div>
+  </section>
+
+  <!-- ================= PAGE 3 · DOCUMENTS + ADS VS RECORDS ================= -->
+  <section class="pg" aria-label="Page 3">
+    <div class="run"><span><span class="logo" style="font-size:14px">Parakh</span>&nbsp;&nbsp;Sample Gardens, Lahore · Report PK-LHR-000123</span><span class="chip warn">! Some problems found · 58</span></div>
+    <div class="in" style="padding-top:26px;display:flex;flex-direction:column;gap:14px">
+      <div><p class="kick">Documents</p><h2 class="h2" style="margin-top:4px">Documents we found, and the ones we didn’t</h2>
+        <p class="mut" style="margin-top:6px">Official documents published online. If we could not find one, ask the developer for it before you pay.</p></div>
+      <div style="display:flex;gap:16px">
+        <div style="flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+          <sc-for list="{{docs}}" as="d" hint-placeholder-count="6">
+            <div class="box" style="display:flex;flex-direction:column">
+              <div style="height:84px;background:#F6F2EA;border-bottom:1px solid #EFE8DA;display:flex;align-items:center;justify-content:center">
+                <div class="{{d.pageCls}}"><span></span><span style="width:44px;height:3px;background:#CFC6B6"></span><span style="width:38px;height:3px;background:#CFC6B6"></span><span style="width:46px;height:3px;background:#CFC6B6"></span><span style="width:30px;height:3px;background:#CFC6B6"></span></div>
+              </div>
+              <div style="padding:10px 12px;display:flex;flex-direction:column;gap:5px">
+                <span class="{{d.chipCls}}" style="align-self:flex-start">{{d.chip}}</span>
+                <b style="font-size:12px;line-height:1.3">{{d.title}}</b>
+                <span class="mut" style="font-size:10.5px">{{d.src}}</span>
+                <span class="lnk" style="font-size:10.5px">{{d.cta}} →</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div class="box" style="width:220px;flex-shrink:0;padding:14px 16px">
+          <p class="h3">Ask the developer for these before you pay</p>
+          <sc-for list="{{askFor}}" as="a" hint-placeholder-count="7">
+            <div style="display:flex;gap:8px;padding:7px 0;border-top:1px solid #EFE8DA;font-size:11px;line-height:1.4"><span style="width:12px;height:12px;border:1.5px solid #1D4A9E;border-radius:2px;flex-shrink:0;margin-top:1px"></span><span>{{a}}</span></div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="margin-top:8px"><p class="kick">Ads vs records</p><h2 class="h2" style="margin-top:4px">What the ads say, and what the records say</h2>
+        <p class="mut" style="margin-top:6px">We compared claims from the developer’s ads and social media with the official records on page 2.</p></div>
+      <table class="box">
+        <thead><tr><th style="width:150px">What the ad says</th><th style="width:130px">Where we saw it</th><th>What the record says</th><th style="width:100px">Does it match?</th></tr></thead>
+        <tbody>
+          <tr><td><b style="font-size:12.5px">“LDA approved”</b></td><td class="mut">Facebook page · Sep 2026</td><td>LDA approved Phase 1 and 2 only. Phase 3 is not approved.</td><td><span class="chip warn">! Partly true</span></td></tr>
+          <tr><td><b style="font-size:12.5px">“1,200 kanal project”</b></td><td class="mut">Property portal ad · Aug 2026</td><td>The approved plan covers 800 kanal.</td><td><span class="chip bad">✕ Does not match</span></td></tr>
+          <tr><td><b style="font-size:12.5px">“Possession in 2021”</b></td><td class="mut">Brochure · 2019</td><td>Buyers say plots are still not handed over (Dawn, Mar 2026).</td><td><span class="chip bad">✕ Did not happen</span></td></tr>
+          <tr><td><b style="font-size:12.5px">“Registered with PRERA”</b></td><td class="mut">YouTube ad · Jul 2026</td><td>Not in PRERA’s registered projects list.</td><td><span class="chip warn">! Not found</span></td></tr>
+          <tr><td><b style="font-size:12.5px">“Company since 2014”</b></td><td class="mut">Developer website</td><td>SECP shows the company registered in 2014.</td><td><span class="chip ok">✓ Matches</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="foot"><span>Checked 24 Oct 2026, 10:42 am · Verify at [parakh-domain]/r/PK-LHR-000123</span><span>Page 3 of 5</span></div>
+  </section>
+
+  <!-- ================= PAGE 4 · TIMELINE + FINDINGS ================= -->
+  <section class="pg" aria-label="Page 4">
+    <div class="run"><span><span class="logo" style="font-size:14px">Parakh</span>&nbsp;&nbsp;Sample Gardens, Lahore · Report PK-LHR-000123</span><span class="chip warn">! Some problems found · 58</span></div>
+    <div class="in" style="padding-top:26px;display:flex;flex-direction:column;gap:14px">
+      <div><p class="kick">Timeline</p><h2 class="h2" style="margin-top:4px">What happened, and when</h2></div>
+      <div style="display:flex">
+        <sc-for list="{{timeline}}" as="e" hint-placeholder-count="8">
+          <div style="flex:1;display:flex;flex-direction:column;gap:6px;padding-right:8px">
+            <div style="display:flex;align-items:center"><span class="{{e.dotCls}}"></span><span class="{{e.lineCls}}"></span></div>
+            <b class="{{e.yCls}}">{{e.y}}</b>
+            <span class="mut" style="font-size:10.5px;line-height:1.4">{{e.t}}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top:10px"><p class="kick">From news, social media and complaints</p><h2 class="h2" style="margin-top:4px">Problems found and good signs</h2></div>
+      <div class="box" style="padding:4px 18px 8px">
+        <div style="display:flex;align-items:center;gap:8px;padding:12px 0 6px"><span style="width:10px;height:10px;background:#D92D20"></span><p class="h3">Problems found</p><span class="mut" style="font-weight:700">3</span></div>
+        <sc-for list="{{problems}}" as="f" hint-placeholder-count="3">
+          <div style="display:flex;gap:16px;padding:12px 0;border-top:1px solid #EFE8DA">
+            <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+              <div style="display:flex;gap:6px;align-items:center"><span style="font-size:9.5px;font-weight:700;letter-spacing:.08em;color:#5E5A50;text-transform:uppercase">{{f.type}}</span><sc-if value="{{f.serious}}" hint-placeholder-val="{{true}}"><span class="chip bad">Serious</span></sc-if><sc-if value="{{f.allegation}}" hint-placeholder-val="{{false}}"><span class="chip none">Allegation</span></sc-if></div>
+              <b style="font-size:13px;line-height:1.35">{{f.title}}</b>
+              <span class="mut" style="font-size:11.5px">{{f.detail}}</span>
+            </div>
+            <div style="width:130px;flex-shrink:0;font-size:10.5px"><span class="mut">Source {{f.n}}</span><br><b>{{f.src}}</b><br><span class="mut">{{f.date}}</span></div>
+          </div>
+        </sc-for>
+      </div>
+      <div class="box" style="padding:4px 18px 8px">
+        <div style="display:flex;align-items:center;gap:8px;padding:12px 0 6px"><span style="width:10px;height:10px;background:#1F8A4C"></span><p class="h3">Good signs</p><span class="mut" style="font-weight:700">2</span></div>
+        <sc-for list="{{good}}" as="f" hint-placeholder-count="2">
+          <div style="display:flex;gap:16px;padding:12px 0;border-top:1px solid #EFE8DA">
+            <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+              <span style="font-size:9.5px;font-weight:700;letter-spacing:.08em;color:#5E5A50;text-transform:uppercase">{{f.type}}</span>
+              <b style="font-size:13px;line-height:1.35">{{f.title}}</b>
+              <span class="mut" style="font-size:11.5px">{{f.detail}}</span>
+            </div>
+            <div style="width:130px;flex-shrink:0;font-size:10.5px"><span class="mut">Source {{f.n}}</span><br><b>{{f.src}}</b><br><span class="mut">{{f.date}}</span></div>
+          </div>
+        </sc-for>
+      </div>
+      <div class="sand" style="padding:12px 16px;display:flex;gap:24px;font-size:11px">
+        <span><b>What buyers complain about</b> <span class="mut">(14 posts online)</span></span>
+        <span>Late possession <b>8</b></span><span>Extra charges <b>4</b></span><span>Office not responding <b>2</b></span>
+      </div>
+    </div>
+    <div class="foot"><span>Checked 24 Oct 2026, 10:42 am · Verify at [parakh-domain]/r/PK-LHR-000123</span><span>Page 4 of 5</span></div>
+  </section>
+
+  <!-- ================= PAGE 5 · DEVELOPER, REPLY, SOURCES ================= -->
+  <section class="pg" aria-label="Page 5">
+    <div class="run"><span><span class="logo" style="font-size:14px">Parakh</span>&nbsp;&nbsp;Sample Gardens, Lahore · Report PK-LHR-000123</span><span class="chip warn">! Some problems found · 58</span></div>
+    <div class="in" style="padding-top:26px;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;gap:16px">
+        <div class="box" style="flex:1;padding:16px 18px">
+          <p class="kick">Developer</p><p class="h3" style="margin-top:4px;font-size:17px">Sample Builders (Pvt) Ltd</p>
+          <div style="margin-top:8px;font-size:11px">
+            <div style="display:flex;padding:6px 0;border-top:1px solid #EFE8DA"><span class="mut" style="width:110px">SECP status</span><b>Active · registered 2014</b></div>
+            <div style="display:flex;padding:6px 0;border-top:1px solid #EFE8DA"><span class="mut" style="width:110px">Office</span><span>Raiwind Road, Lahore (from website)</span></div>
+            <div style="display:flex;padding:6px 0;border-top:1px solid #EFE8DA"><span class="mut" style="width:110px">Projects found</span><span>3</span></div>
+          </div>
+          <p style="margin-top:10px;font-size:11px;font-weight:700">Other projects by this developer</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-top:1px solid #EFE8DA;font-size:11px"><span>Sample Heights, Rawalpindi</span><span class="chip ok">No serious problems</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-top:1px solid #EFE8DA;font-size:11px"><span>Sample Enclave, Islamabad</span><span class="chip none">Not enough info</span></div>
+        </div>
+        <div style="width:300px;flex-shrink:0;display:flex;flex-direction:column;gap:12px">
+          <div style="border:1.5px dashed #9C9384;padding:14px 16px;background:#FBF8F2">
+            <p class="kick">Developer’s reply</p>
+            <p class="h3" style="margin-top:4px">Sample Builders has not replied yet</p>
+            <p class="mut" style="margin-top:4px;font-size:11px">We asked the developer for their side on 20 Oct 2026. If they reply, we show it here and on the online report.</p>
+          </div>
+          <div class="sand" style="padding:14px 16px">
+            <p class="h3">What we did not check</p>
+            <ul style="margin-top:6px;padding-left:14px;font-size:11px;display:flex;flex-direction:column;gap:3px">
+              <li>Original documents at the LDA office</li><li>Land title at the registry</li><li>A visit to the site</li><li>The developer’s finances</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div><p class="kick">Sources</p><h2 class="h2" style="margin-top:4px;font-size:20px">Every source in this report</h2></div>
+      <table class="box">
+        <thead><tr><th style="width:28px">#</th><th style="width:160px">Website</th><th>What we used</th><th style="width:80px">Date</th></tr></thead>
+        <tbody>
+          <sc-for list="{{sources}}" as="s" hint-placeholder-count="10">
+            <tr><td><b>{{s.n}}</b></td><td><b>{{s.site}}</b><br><span class="mut" style="font-size:10px">{{s.kind}}</span></td><td>{{s.title}}<br><span class="lnk" style="font-size:10px">{{s.url}}</span></td><td class="mut">{{s.date}}</td></tr>
+          </sc-for>
+        </tbody>
+      </table>
+
+      <div style="display:flex;gap:16px;font-size:10px;color:#5E5A50;border-top:2px solid #1A1D24;padding-top:12px">
+        <p style="flex:1"><b style="color:#1A1D24">About this report.</b> Parakh summarises information that is public online, on the date shown. It does not verify or guarantee any project, and it is not legal advice. Findings marked “Allegation” are claims, not court rulings. Parakh never takes money from developers.</p>
+        <p style="width:220px"><b style="color:#1A1D24">Something wrong?</b> Request a correction at [parakh-domain]/correct or on WhatsApp [YOUR NUMBER]. Quote report PK-LHR-000123.</p>
+      </div>
+    </div>
+    <div class="foot"><span>Checked 24 Oct 2026, 10:42 am · Verify at [parakh-domain]/r/PK-LHR-000123</span><span>Page 5 of 5</span></div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":794,"height":5775}}'>
+var ST = { ok: ['chip ok', '✓ '], warn: ['chip warn', '! '], bad: ['chip bad', '✕ '], none: ['chip none', '– '] };
+var DOCS = [
+  ['NOC letter', 'LDA website · 12 Jun 2018', 'ok', 'Found', 'View document'],
+  ['Approved layout plan (Phase 1–2)', 'LDA website · 2019', 'ok', 'Found', 'View map'],
+  ['Layout plan for Phase 3', 'Not on LDA website', 'bad', 'Not found', 'Ask the developer'],
+  ['PRERA registration', 'Not in PRERA list', 'warn', 'Not found', 'Ask the developer'],
+  ['Company registration', 'SECP · 2014', 'ok', 'Found', 'View record'],
+  ['Allotment letter / booking form', 'Only the developer has this', 'none', 'Ask for it', 'What to check']
+];
+var TL = [['2014', 'Company registered with SECP', 'ok'], ['Jun 2018', 'LDA issues the NOC', 'ok'], ['2019', 'Layout plan approved for Phase 1–2', 'ok'], ['2021', 'Promised possession date', 'warn'], ['2025', 'Buyers file a court case for refunds', 'bad'], ['Mar 2026', 'News report on late possession', 'bad'], ['Sep 2026', 'Phase 3 plots advertised', 'warn'], ['24 Oct 2026', 'Parakh checked', 'none']];
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      docs: DOCS.map(function (d) { var found = d[2] === 'ok'; return { title: d[0], src: d[1], chipCls: ST[d[2]][0], chip: ST[d[2]][1] + d[3], cta: d[4], pageCls: found ? 'docpg' : 'docpg docpg-miss' }; }),
+      askFor: ['A copy of the NOC', 'The approved layout plan, with your plot marked', 'Proof your plot is in Phase 1 or 2', 'The fard or ownership record of the land', 'An allotment letter on company letterhead', 'The payment schedule, in writing', 'A receipt for every payment'],
+      timeline: TL.map(function (e, i) { return { y: e[0], t: e[1], dotCls: 'tdot tdot-' + e[2], lineCls: i === TL.length - 1 ? 'tline tline-end' : 'tline', yCls: e[2] === 'none' ? 'ty ty-now' : 'ty' }; }),
+      problems: [
+        { n: '3', type: 'Not in approved plan', serious: true, allegation: false, title: 'Phase 3 is being sold but is not in the approved layout plan', detail: 'The LDA approved plan covers Phase 1 and 2 only. Ads for Phase 3 plots appeared in September 2026.', src: 'LDA website', date: 'Oct 2026' },
+        { n: '9', type: 'Late possession', serious: true, allegation: false, title: 'Plots promised for 2021 are still not handed over', detail: 'Several buyers told a newspaper they are still waiting for possession three years after the promised date.', src: 'Dawn', date: 'Mar 2026' },
+        { n: '11', type: 'Buyer complaints', serious: false, allegation: true, title: 'Complaints about extra development charges', detail: 'Buyers in a Facebook group say they were asked to pay charges that were not in the booking form. This is a claim, not a ruling.', src: 'Facebook group', date: 'Jan 2026' }
+      ],
+      good: [
+        { n: '1', type: 'Approved by authority', title: 'The scheme and its NOC are listed on the LDA website', detail: 'The project appears on the authority’s list of approved private housing schemes.', src: 'LDA website', date: 'Oct 2026' },
+        { n: '6', type: 'Real company', title: 'The developer is an active registered company', detail: 'SECP shows Sample Builders (Pvt) Ltd as active since 2014.', src: 'SECP', date: 'Oct 2026' }
+      ],
+      sources: [
+        ['LDA', 'Government', 'Approved private housing schemes list', 'lda.gov.pk/…', '24 Oct 2026'],
+        ['LDA', 'Government', 'NOC details for the scheme', 'lda.gov.pk/…', '24 Oct 2026'],
+        ['LDA', 'Government', 'Approved layout plan, Phase 1–2', 'lda.gov.pk/…', '24 Oct 2026'],
+        ['LDA', 'Government', 'Illegal and unapproved schemes list', 'lda.gov.pk/…', '24 Oct 2026'],
+        ['PRERA', 'Government', 'Registered projects list', 'prera.punjab.gov.pk/…', '24 Oct 2026'],
+        ['SECP', 'Government', 'Company search: Sample Builders (Pvt) Ltd', 'secp.gov.pk/…', '24 Oct 2026'],
+        ['Lahore High Court', 'Court', 'Case search: buyers v. developer', 'lhc.gov.pk/…', '24 Oct 2026'],
+        ['Property portal', 'Advert', 'Phase 3 plot listing', 'example.pk/…', 'Aug 2026'],
+        ['Dawn', 'News', 'Buyers still waiting for possession in Lahore scheme', 'dawn.com/…', 'Mar 2026'],
+        ['Facebook group', 'Social media', 'Posts about extra development charges', 'facebook.com/…', 'Jan 2026']
+      ].map(function (s, i) { return { n: String(i + 1), site: s[0], kind: s[1], title: s[2], url: s[3], date: s[4] }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

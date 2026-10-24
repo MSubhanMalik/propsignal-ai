@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parakh How we check</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Nastaliq+Urdu:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF8F2}
+.L h1,.L h2,.L h3,.L p,.L ol,.L ul{margin:0}
+.L-en{font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.55}
+.L-ur{font-family:'Noto Nastaliq Urdu',serif;line-height:2.1}
+.L-en .h{letter-spacing:-0.03em;line-height:1.05}
+.L-ur .h{line-height:1.75}
+a{color:#1D4A9E;text-underline-offset:3px}
+.lat{font-family:'Plus Jakarta Sans',sans-serif}
+.lb{min-height:40px;padding:0 10px;border:0;background:transparent;color:rgba(255,255,255,0.75);cursor:pointer;font-size:14px}
+.lb.on{color:#FFFFFF;font-weight:700;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.lb-en{font-family:'Plus Jakarta Sans',sans-serif}.lb-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:14px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px;box-sizing:border-box}
+@media (max-width:900px){.wrap{padding-left:18px;padding-right:18px}}
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,16,10,0.9) 0%,rgba(22,16,10,0.7) 55%,rgba(22,16,10,0.35) 100%)}
+[dir=rtl] .shade{background:linear-gradient(270deg,rgba(22,16,10,0.9) 0%,rgba(22,16,10,0.7) 55%,rgba(22,16,10,0.35) 100%)}
+.nav a{color:#FFFFFF;text-decoration:none;font-size:15px;font-weight:600;min-height:44px;display:flex;align-items:center}
+.sq{display:inline-block;width:18px;height:18px;flex-shrink:0;margin-top:6px}
+.sq-low{background:#1F8A4C}.sq-medium{background:#D97706}.sq-high{background:#D92D20}.sq-unknown{background:#8A94A3}
+</style>
+</helmet>
+<div class="{{langClass}}" dir="{{dir}}" lang="{{lang}}" style="width: 100%; min-height: 100vh; box-sizing: border-box; background: #FBF8F2; color: #1A1D24; font-size: 17px">
+
+  <section style="position: relative; overflow: hidden; color: #FFFFFF">
+    <img class="photo" src="/_blob/2a57ba716c9e70ae45b9473d2048f26a" alt="">
+    <div class="shade"></div>
+    <div class="wrap" style="position: relative; padding-top: 16px; padding-bottom: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.18)">
+      <span style="display: flex; align-items: baseline; gap: 10px"><span class="lat" style="font-weight: 800; font-size: 26px; letter-spacing: -0.03em">Parakh</span><span style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 18px; line-height: 1">پرکھ</span></span>
+      <nav class="nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px">
+        <sc-for list="{{t.nav}}" as="n" hint-placeholder-count="2"><a href="#">{{n}}</a></sc-for>
+        <div role="group" aria-label="Language" style="display: flex"><sc-for list="{{langs}}" as="l" hint-placeholder-count="2"><button type="button" class="{{l.cls}}" aria-pressed="{{l.pressed}}" onClick="{{l.pick}}">{{l.label}}</button></sc-for></div>
+      </nav>
+    </div>
+    <div class="wrap" style="position: relative; padding-top: 88px; padding-bottom: 96px">
+      <div style="max-width: 720px; display: flex; flex-direction: column; gap: 20px">
+        <h1 class="h" style="font-size: clamp(42px, 5.6vw, 72px); font-weight: 800">{{t.h1}}</h1>
+        <p style="font-size: 21px; color: rgba(255,255,255,0.9)">{{t.sub}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 88px; padding-bottom: 40px">
+    <h2 class="h" style="font-size: clamp(34px, 4vw, 52px); font-weight: 800">{{t.stepsTitle}}</h2>
+    <div style="margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); border-top: 2px solid #1A1D24">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+        <div style="padding: 26px 26px 30px 0; padding-inline-end: 26px; padding-inline-start: 0; border-bottom: 1px solid #E3DACA; display: flex; flex-direction: column; gap: 10px">
+          <span class="lat" style="font-size: 44px; font-weight: 800; line-height: 1; color: #1D4A9E">{{s.n}}</span>
+          <h3 style="font-size: 22px; font-weight: 800">{{s.t}}</h3>
+          <p style="font-size: 17px; color: #4A463D">{{s.d}}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 56px; padding-bottom: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px">
+    <div style="background: #FFFFFF; border: 1px solid #E3DACA; border-top: 6px solid #1D4A9E; padding: 30px 32px; display: flex; flex-direction: column; gap: 14px">
+      <h2 class="h" style="font-size: 30px; font-weight: 800">{{t.doesTitle}}</h2>
+      <ul style="padding-inline-start: 22px; display: flex; flex-direction: column; gap: 10px; font-size: 18px"><sc-for list="{{t.does}}" as="x" hint-placeholder-count="4"><li>{{x}}</li></sc-for></ul>
+    </div>
+    <div style="background: #FFFFFF; border: 1px solid #E3DACA; border-top: 6px solid #1A1D24; padding: 30px 32px; display: flex; flex-direction: column; gap: 14px">
+      <h2 class="h" style="font-size: 30px; font-weight: 800">{{t.doesntTitle}}</h2>
+      <ul style="padding-inline-start: 22px; display: flex; flex-direction: column; gap: 10px; font-size: 18px"><sc-for list="{{t.doesnt}}" as="x" hint-placeholder-count="4"><li>{{x}}</li></sc-for></ul>
+    </div>
+  </section>
+
+  <section style="background: #F2EBDD; border-top: 1px solid #E3DACA; border-bottom: 1px solid #E3DACA; margin-top: 48px">
+    <div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-wrap: wrap; gap: 40px 64px">
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+        <h2 class="h" style="font-size: clamp(32px, 3.6vw, 46px); font-weight: 800">{{t.resultsTitle}}</h2>
+        <p style="font-size: 18px; color: #4A463D">{{t.resultsIntro}}</p>
+      </div>
+      <div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; border-top: 2px solid #1A1D24">
+        <sc-for list="{{results}}" as="r" hint-placeholder-count="4">
+          <div style="display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid #DCD2BF"><span class="{{r.cls}}"></span><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 21px; font-weight: 800">{{r.l}}</span><span style="font-size: 17px; color: #4A463D">{{r.d}}</span></span></div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 88px; padding-bottom: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px 64px">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h2 class="h" style="font-size: 34px; font-weight: 800">{{t.pledgeTitle}}</h2>
+      <ol style="list-style: none; padding: 0; border-top: 2px solid #1A1D24">
+        <sc-for list="{{pledge}}" as="p" hint-placeholder-count="4"><li style="display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #E3DACA"><span class="lat" style="font-size: 24px; font-weight: 800; color: #1D4A9E; width: 26px; flex-shrink: 0">{{p.n}}</span><span style="font-size: 18px">{{p.text}}</span></li></sc-for>
+      </ol>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h2 class="h" style="font-size: 34px; font-weight: 800">{{t.corrTitle}}</h2>
+      <p style="font-size: 18px; color: #2A2721; border-top: 2px solid #1A1D24; padding-top: 16px">{{t.corrText}}</p>
+      <a href="#" style="align-self: flex-start; min-height: 52px; padding: 0 22px; display: inline-flex; align-items: center; border: 2px solid #1D4A9E; text-decoration: none; font-size: 17px; font-weight: 700">{{t.corrCta}}</a>
+      <div style="margin-top: 18px; display: flex; gap: 18px; align-items: center; background: #FFFFFF; border: 1px solid #E3DACA; padding: 20px">
+        <span style="width: 72px; height: 72px; border-radius: 999px; background: #E8DFCF; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #5E5A50" class="lat">PHOTO</span>
+        <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 19px; font-weight: 800">{{t.founderName}}</span><span style="font-size: 16px; color: #4A463D">{{t.founderLine}}</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #1D4A9E; color: #FFFFFF; margin-top: 56px">
+    <div class="wrap" style="padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between">
+      <div style="display: flex; flex-direction: column; gap: 8px; max-width: 640px"><h2 class="h" style="font-size: 34px; font-weight: 800">{{t.helpTitle}}</h2><p style="font-size: 18px; color: rgba(255,255,255,0.88)">{{t.helpText}}</p></div>
+      <a href="#" style="min-height: 60px; padding: 0 26px; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; color: #1D4A9E; text-decoration: none; font-size: 18px; font-weight: 800"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z" fill="none" stroke="#1D4A9E" stroke-width="2" stroke-linejoin="round"></path></svg>{{t.helpCta}}</a>
+    </div>
+  </section>
+
+  <footer style="background: #14100B; color: #CFC6B6">
+    <div class="wrap" style="padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 15px">
+      <span class="lat" style="font-weight: 800; font-size: 22px; color: #FFFFFF">Parakh</span>
+      <span>{{t.note}}</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"startLang":{"editor":"enum","options":["en","ur"],"default":"en"},"$preview":{"width":1280,"height":3000}}'>
+var PH = {
+  en: { dir: 'ltr', name: 'English', nav: ['Check a project', 'Help'], h1: 'How Parakh checks a project', sub: 'We read what is public online so you do not have to, and we show you exactly where every finding comes from.', stepsTitle: 'Four steps, every time',
+    steps: [{ t: 'We find the right project', d: 'We work out the exact project and developer, so findings about a similarly named scheme do not get mixed in.' }, { t: 'We search where buyers can’t', d: 'News websites, Facebook groups, court listings, government notices and development authority lists.' }, { t: 'We read and check', d: 'Every finding must come from a real source we found. Serious findings are checked again before you see them.' }, { t: 'We write a plain report', d: 'One clear result, a short summary, each finding with its link, and what to do next.' }],
+    doesTitle: 'What Parakh does', does: ['Summarises what is public online about a project', 'Shows the source for every finding', 'Tells you what we checked and what we did not', 'Works in Urdu and English, for free'],
+    doesntTitle: 'What Parakh does not do', doesnt: ['Verify or guarantee any project', 'Check land records or visit the site', 'Give legal advice', 'Take money from developers'],
+    resultsTitle: 'What each result means', resultsIntro: 'The result is a summary of what we found online. It is never a promise that a project is safe.',
+    results: [{ lvl: 'low', l: 'No serious problems found online', d: 'We found no serious problems in public sources. Still check with the authority before paying.' }, { lvl: 'medium', l: 'Some problems found – check carefully', d: 'We found problems you should ask the developer and the authority about.' }, { lvl: 'high', l: 'Serious problems found', d: 'We found court cases, government notices or fraud complaints. Do not pay until these are checked.' }, { lvl: 'unknown', l: 'Not enough information online', d: 'There is too little public information to judge. New or small projects often have none.' }],
+    pledgeTitle: 'Our promises', pledge: ['We never take money from developers, and no one can pay to change a result.', 'Every finding links to where we found it.', 'We do not sell your searches or your number to anyone.', 'We call allegations allegations, unless a court has ruled.'],
+    corrTitle: 'Corrections and right of reply', corrText: 'If something in a report is wrong, tell us. Developers can also send their side, and we show it on the report. Every correction is logged publicly.', corrCta: 'Request a correction', founderName: '[Founder name]', founderLine: 'Founder, Parakh · Lahore · [WhatsApp number]',
+    helpTitle: 'Questions? Talk to a person.', helpText: 'Send us a message on WhatsApp in Urdu or English. A real person replies.', helpCta: 'Message us on WhatsApp', note: 'Parakh does not verify or guarantee any project. It is not legal advice.' },
+  ur: { dir: 'rtl', name: 'اردو', nav: ['پروجیکٹ پرکھیں', 'مدد'], h1: 'پرکھ کسی پروجیکٹ کو کیسے پرکھتا ہے', sub: 'ہم انٹرنیٹ پر موجود عام معلومات آپ کے لیے پڑھتے ہیں، اور ہر بات کے ساتھ دکھاتے ہیں کہ وہ کہاں سے ملی۔', stepsTitle: 'ہر بار چار مرحلے',
+    steps: [{ t: 'ہم صحیح پروجیکٹ تلاش کرتے ہیں', d: 'ہم ٹھیک پروجیکٹ اور ڈویلپر کی پہچان کرتے ہیں، تاکہ ملتے جلتے نام والی اسکیم کی معلومات شامل نہ ہوں۔' }, { t: 'ہم وہاں تلاش کرتے ہیں جہاں خریدار نہیں کر سکتے', d: 'خبروں کی ویب سائٹس، فیس بک گروپس، عدالتی فہرستیں، سرکاری نوٹس اور ترقیاتی اداروں کی فہرستیں۔' }, { t: 'ہم پڑھتے اور جانچتے ہیں', d: 'ہر بات کسی اصل ذریعے سے آنی چاہیے۔ سنگین باتیں آپ کو دکھانے سے پہلے دوبارہ جانچی جاتی ہیں۔' }, { t: 'ہم آسان رپورٹ لکھتے ہیں', d: 'ایک واضح نتیجہ، مختصر خلاصہ، ہر بات کا لنک، اور آگے کیا کرنا ہے۔' }],
+    doesTitle: 'پرکھ کیا کرتا ہے', does: ['انٹرنیٹ پر کسی پروجیکٹ کے بارے میں عام معلومات کا خلاصہ', 'ہر بات کا ذریعہ دکھاتا ہے', 'بتاتا ہے کہ ہم نے کیا پرکھا اور کیا نہیں', 'اردو اور انگریزی میں، مفت'],
+    doesntTitle: 'پرکھ کیا نہیں کرتا', doesnt: ['کسی پروجیکٹ کی تصدیق یا ضمانت', 'زمین کا ریکارڈ دیکھنا یا سائٹ کا دورہ', 'قانونی مشورہ', 'ڈویلپرز سے پیسے لینا'],
+    resultsTitle: 'ہر نتیجے کا مطلب', resultsIntro: 'نتیجہ اس بات کا خلاصہ ہے جو ہمیں انٹرنیٹ پر ملا۔ یہ کبھی وعدہ نہیں کہ پروجیکٹ محفوظ ہے۔',
+    results: [{ lvl: 'low', l: 'انٹرنیٹ پر کوئی سنگین مسئلہ نہیں ملا', d: 'عام ذرائع میں کوئی سنگین مسئلہ نہیں ملا۔ پھر بھی پیسے دینے سے پہلے ادارے سے معلوم کریں۔' }, { lvl: 'medium', l: 'کچھ مسائل ملے – احتیاط سے جانچیں', d: 'ایسے مسائل ملے جن کے بارے میں ڈویلپر اور ادارے سے پوچھنا چاہیے۔' }, { lvl: 'high', l: 'سنگین مسائل ملے', d: 'عدالتی مقدمات، سرکاری نوٹس یا فراڈ کی شکایات ملیں۔ جانچ سے پہلے پیسے نہ دیں۔' }, { lvl: 'unknown', l: 'انٹرنیٹ پر کافی معلومات نہیں', d: 'فیصلہ کرنے کے لیے بہت کم معلومات ہیں۔ نئے یا چھوٹے پروجیکٹس کی اکثر کوئی معلومات نہیں ہوتیں۔' }],
+    pledgeTitle: 'ہمارے وعدے', pledge: ['ہم ڈویلپرز سے کبھی پیسے نہیں لیتے، اور کوئی پیسے دے کر نتیجہ نہیں بدلوا سکتا۔', 'ہر بات کے ساتھ اس کا ذریعہ ہوتا ہے۔', 'ہم آپ کی تلاش یا نمبر کسی کو نہیں بیچتے۔', 'جب تک عدالت فیصلہ نہ دے، ہم الزام کو الزام ہی کہتے ہیں۔'],
+    corrTitle: 'درستی اور جواب کا حق', corrText: 'اگر رپورٹ میں کچھ غلط ہے تو ہمیں بتائیں۔ ڈویلپر بھی اپنا مؤقف بھیج سکتے ہیں، جو ہم رپورٹ پر دکھاتے ہیں۔ ہر درستی عوامی طور پر درج کی جاتی ہے۔', corrCta: 'درستی کی درخواست کریں', founderName: '[بانی کا نام]', founderLine: 'بانی، پرکھ · لاہور · [واٹس ایپ نمبر]',
+    helpTitle: 'کوئی سوال؟ کسی انسان سے بات کریں۔', helpText: 'اردو یا انگریزی میں واٹس ایپ پر پیغام بھیجیں۔ جواب ایک انسان دیتا ہے۔', helpCta: 'واٹس ایپ پر پیغام بھیجیں', note: 'پرکھ کسی پروجیکٹ کی تصدیق یا ضمانت نہیں دیتا۔ یہ قانونی مشورہ نہیں۔' }
+};
+class Component extends DCLogic {
+  renderVals() {
+    var k = (this.state && this.state.lang) || this.props.startLang || 'en';
+    var t = PH[k]; var self = this;
+    return {
+      t: t, lang: k, dir: t.dir, langClass: 'L L-' + k,
+      langs: ['en', 'ur'].map(function (c) { return { label: PH[c].name, cls: 'lb lb-' + c + (c === k ? ' on' : ''), pressed: c === k ? 'true' : 'false', pick: function () { self.setState({ lang: c }); } }; }),
+      steps: t.steps.map(function (s, i) { return { n: '0' + (i + 1), t: s.t, d: s.d }; }),
+      results: t.results.map(function (r) { return { l: r.l, d: r.d, cls: 'sq sq-' + r.lvl }; }),
+      pledge: t.pledge.map(function (p, i) { return { n: String(i + 1), text: p }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

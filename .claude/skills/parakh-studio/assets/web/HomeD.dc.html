@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parakh Home, Direction D</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Kufi+Arabic:wght@400;500;600;700;800&amp;family=Noto+Nastaliq+Urdu:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF8F2}
+.L h1,.L h2,.L h3,.L p{margin:0}
+.L-en{font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.55}
+.L-ur{font-family:'Noto Nastaliq Urdu',serif;line-height:2.1}
+.L-ar{font-family:'Noto Kufi Arabic',sans-serif;line-height:1.75}
+.L-en .h{letter-spacing:-0.03em;line-height:1.03}
+.L-ur .h{line-height:1.7}
+.L-ar .h{line-height:1.4}
+.L input{font-family:inherit}
+.L input::placeholder{color:#7C7668}
+a{color:inherit}
+.lb{min-height:40px;padding:0 10px;border:0;background:transparent;color:rgba(255,255,255,0.75);cursor:pointer;font-size:14px}
+.lb.on{color:#FFFFFF;font-weight:700;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.lb-en{font-family:'Plus Jakarta Sans',sans-serif}.lb-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:14px}.lb-ar{font-family:'Noto Kufi Arabic',sans-serif}
+.dot{display:inline-block;width:10px;height:10px;flex-shrink:0}
+.rk-low{background:#1F8A4C}.rk-medium{background:#D97706}.rk-high{background:#D92D20}.rk-unknown{background:#8A94A3}
+.flip{transition:transform .2s}[dir=rtl] .flip{transform:scaleX(-1)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px;box-sizing:border-box}
+@media (max-width:900px){.wrap{padding-left:18px;padding-right:18px}}
+.nav a{color:#FFFFFF;text-decoration:none;font-size:15px;font-weight:600;min-height:44px;display:flex;align-items:center}
+.nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph{position:absolute;inset:0;background-color:#6B5440;background-image:radial-gradient(circle at 70% 30%,#9C7A57 0,transparent 55%),radial-gradient(circle at 20% 80%,#3F3025 0,transparent 60%)}
+.ph-cap{position:absolute;top:14px;inset-inline-start:14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,0.8);background:rgba(0,0,0,0.35);padding:4px 8px}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,16,10,0.88) 0%,rgba(22,16,10,0.72) 45%,rgba(22,16,10,0.25) 100%)}
+[dir=rtl] .shade{background:linear-gradient(270deg,rgba(22,16,10,0.88) 0%,rgba(22,16,10,0.72) 45%,rgba(22,16,10,0.25) 100%)}
+.fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,16,10,0) 35%,rgba(22,16,10,0.85) 100%)}
+.city{transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.city:hover{transform:translateY(-4px)}
+</style>
+</helmet>
+<div class="{{langClass}}" dir="{{dir}}" lang="{{lang}}" style="width: 100%; min-height: 100vh; box-sizing: border-box; background: #FBF8F2; color: #1A1D24; font-size: 17px">
+
+  <section style="position: relative; overflow: hidden; min-height: 820px; color: #FFFFFF; display: flex; flex-direction: column">
+    <img class="photo" src="/_blob/e794616fc947056ecdd1d579fe99a90c" alt="" style="object-position: center 70%">
+    <div class="shade"></div>
+
+    <header class="wrap" style="position: relative; width: 100%; padding-top: 18px; padding-bottom: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.18)">
+      <span style="display: flex; align-items: baseline; gap: 10px">
+        <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.03em">Parakh</span>
+        <span style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 20px; line-height: 1">پرکھ</span>
+      </span>
+      <nav class="nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px">
+        <sc-for list="{{t.nav}}" as="n" hint-placeholder-count="3"><a href="#">{{n}}</a></sc-for>
+        <span style="font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.8)">{{t.phone}}</span>
+        <div role="group" aria-label="Language" style="display: flex">
+          <sc-for list="{{langs}}" as="l" hint-placeholder-count="3">
+            <button type="button" class="{{l.cls}}" aria-pressed="{{l.pressed}}" onClick="{{l.pick}}">{{l.label}}</button>
+          </sc-for>
+        </div>
+      </nav>
+    </header>
+
+    <div class="wrap" style="position: relative; width: 100%; flex: 1; padding-top: 72px; padding-bottom: 72px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+      <div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <h1 class="h" style="font-size: clamp(48px, 7vw, 96px); font-weight: 800; text-shadow: 0 2px 24px rgba(0,0,0,0.25)">{{t.h1}}</h1>
+        <p style="font-size: 21px; color: rgba(255,255,255,0.88); max-width: 560px">{{t.sub}}</p>
+        <form style="margin-top: 10px; display: flex; flex-wrap: wrap; max-width: 680px; background: #FFFFFF; padding: 8px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55)">
+          <label for="pd" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">{{t.label}}</label>
+          <input id="pd" type="text" placeholder="{{t.placeholder}}" style="flex: 1 1 300px; min-width: 0; min-height: 64px; border: 0; padding: 0 16px; font-size: 19px; color: #1A1D24; background: #FFFFFF; outline: none">
+          <button type="button" style="flex: 0 0 auto; min-height: 64px; padding: 0 30px; border: 0; background: #1D4A9E; color: #FFFFFF; font-family: inherit; font-size: 18px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 10px">{{t.cta}}<svg class="flip" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M12 5l7 7-7 7" fill="none" stroke="#FFFFFF" stroke-width="2.6"></path></svg></button>
+        </form>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.8)">{{t.free}} {{t.tryLabel}} <sc-for list="{{t.examples}}" as="e" hint-placeholder-count="2"><a href="#" style="color: #FFFFFF; font-weight: 700; margin-inline-end: 12px; text-underline-offset: 4px">{{e}}</a></sc-for></p>
+      </div>
+
+      <aside style="flex: 0 1 400px; min-width: 0; background: #FFFFFF; color: #1A1D24; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6)">
+        <div style="padding: 14px 20px; display: flex; justify-content: space-between; gap: 10px; font-size: 14px; font-weight: 700; color: #5E5A50; border-bottom: 1px solid #EFE8DA"><span>{{t.sampleTag}}</span><span>{{t.sampleWhen}}</span></div>
+        <div style="padding: 16px 20px; background: #FDF0DF; border-bottom: 3px solid #D97706; display: flex; justify-content: space-between; align-items: flex-end; gap: 10px">
+          <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 700; color: #6B3403">{{t.sampleShort}}</span><span class="h" style="font-size: 23px; font-weight: 800; color: #5A2C02">{{t.sampleLabel}}</span></span>
+          <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 30px; font-weight: 800; color: #5A2C02; line-height: 1">58<span style="font-size: 14px"> /100</span></span>
+        </div>
+        <div style="padding: 4px 20px 12px">
+          <sc-for list="{{finds}}" as="f" hint-placeholder-count="3">
+            <div style="padding: 11px 0; border-bottom: {{f.border}}; display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 13px; font-weight: 800; color: #5E5A50; display: flex; gap: 8px; align-items: center">{{f.t}}<sc-if value="{{f.serious}}" hint-placeholder-val="{{false}}"><span style="background: #1A1D24; color: #FFFFFF; padding: 0 6px">{{t.serious}}</span></sc-if></span>
+              <span style="font-size: 15px; font-weight: 700">{{f.d}}</span>
+              <span style="font-size: 13px; font-weight: 700; color: #1D4A9E">{{t.srcWord}}: {{f.s}} ↗</span>
+            </div>
+          </sc-for>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 96px; padding-bottom: 72px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px">
+      <h2 class="h" style="font-size: clamp(36px, 4.4vw, 58px); font-weight: 800; max-width: 620px">{{t.checkTitle}}</h2>
+      <p style="font-size: 19px; color: #4A463D; max-width: 440px">{{t.checkSub}}</p>
+    </div>
+    <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0; border-top: 2px solid #1A1D24">
+      <sc-for list="{{checks}}" as="c" hint-placeholder-count="6">
+        <div style="padding: 28px 28px 32px 0; padding-inline-end: 28px; padding-inline-start: 0; border-bottom: 1px solid #E3DACA; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 44px; font-weight: 800; line-height: 1; color: #1D4A9E">{{c.n}}</span>
+          <span style="font-size: 23px; font-weight: 800">{{c.t}}</span>
+          <span style="font-size: 17px; color: #4A463D">{{c.d}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background: #F2EBDD; border-top: 1px solid #E3DACA; border-bottom: 1px solid #E3DACA; overflow: hidden">
+    <div class="wrap" style="padding-top: 104px; padding-bottom: 104px; display: flex; flex-wrap: wrap; gap: 56px 72px; align-items: center">
+      <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+        <h2 class="h" style="font-size: clamp(38px, 4.6vw, 62px); font-weight: 800">{{t.sampleTitle}}</h2>
+        <p style="font-size: 20px; color: #4A463D; max-width: 480px">{{t.sampleIntro}}</p>
+        <ol style="list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-direction: column">
+          <sc-for list="{{points}}" as="p" hint-placeholder-count="3">
+            <li style="display: flex; gap: 22px; padding: 22px 0; border-top: 1px solid #DCD2BF">
+              <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 40px; font-weight: 800; line-height: 1; color: #1D4A9E; width: 52px; flex-shrink: 0">{{p.n}}</span>
+              <span style="display: flex; flex-direction: column; gap: 4px">
+                <span style="font-size: 22px; font-weight: 800">{{p.t}}</span>
+                <span style="font-size: 17px; color: #4A463D">{{p.d}}</span>
+              </span>
+            </li>
+          </sc-for>
+        </ol>
+      </div>
+
+      <div style="flex: 0 1 420px; min-width: 0; position: relative; display: flex; justify-content: center; padding: 30px 0">
+        <div aria-hidden="true" style="position: absolute; top: 0; bottom: 0; inset-inline-start: 12%; inset-inline-end: -40%; background: #1D4A9E"></div>
+        <div role="img" aria-label="{{t.sampleTitle}}" style="position: relative; width: 340px; background: #15171C; border-radius: 46px; padding: 12px; box-shadow: 0 40px 80px -30px rgba(10,20,40,0.6)">
+          <div style="background: #FFFFFF; border-radius: 35px; overflow: hidden; display: flex; flex-direction: column">
+            <div style="padding: 18px 20px 12px; display: flex; justify-content: space-between; align-items: center">
+              <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 18px; color: #1D4A9E">Parakh</span>
+              <span style="font-size: 12px; font-weight: 700; color: #5E5A50">{{t.sampleTag}}</span>
+            </div>
+            <div style="background: #FDF0DF; border-top: 4px solid #D97706; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 12px; font-weight: 700; color: #6B3403">{{t.sampleShort}}</span>
+              <span class="h" style="font-size: 25px; font-weight: 800; color: #4F2602">{{t.sampleLabel}}</span>
+              <span style="font-size: 13px; color: #6B3403">{{t.sampleSub}}</span>
+              <span style="padding-top: 6px; font-family: 'Plus Jakarta Sans', sans-serif; color: #4F2602"><span style="font-size: 34px; font-weight: 800">58</span><span style="font-size: 14px; font-weight: 700"> / 100</span></span>
+            </div>
+            <p style="padding: 14px 20px 4px; font-size: 13.5px; color: #2A2721; line-height: 1.55">{{t.sampleSummary}}</p>
+            <div style="padding: 0 20px">
+              <sc-for list="{{finds}}" as="f" hint-placeholder-count="3">
+                <div style="padding: 11px 0; border-bottom: {{f.border}}; display: flex; flex-direction: column; gap: 2px">
+                  <span style="display: flex; gap: 6px; align-items: center; font-size: 11.5px; font-weight: 800; color: #5E5A50">{{f.t}}<sc-if value="{{f.serious}}" hint-placeholder-val="{{false}}"><span style="background: #1A1D24; color: #FFFFFF; padding: 0 6px">{{t.serious}}</span></sc-if></span>
+                  <span style="font-size: 14px; font-weight: 700; line-height: 1.35">{{f.d}}</span>
+                  <span style="font-size: 12px; font-weight: 700; color: #1D4A9E">{{t.srcWord}}: {{f.s}} ↗</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="padding: 14px 20px 22px">
+              <span style="min-height: 46px; display: flex; align-items: center; justify-content: center; gap: 8px; background: #1A1D24; color: #FFFFFF; font-size: 14px; font-weight: 800; border-radius: 10px"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"></path></svg>{{t.share}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 96px; padding-bottom: 48px">
+    <h2 class="h" style="font-size: clamp(36px, 4.4vw, 58px); font-weight: 800; max-width: 760px">{{t.cityTitle}}</h2>
+    <div style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px">
+      <a href="#" class="city" style="position: relative; display: block; height: 380px; overflow: hidden; border-radius: 999px 999px 0 0; text-decoration: none; color: #FFFFFF">
+        <img class="photo" src="/_blob/dd4e07ee51876740828133a6cfdc7348" alt="">
+        <div class="fade"></div>
+        <span style="position: absolute; inset-inline: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 2px"><span class="h" style="font-size: 28px; font-weight: 800">{{c1.name}}</span><span style="font-size: 15px; color: rgba(255,255,255,0.85)">{{c1.line}}</span></span>
+      </a>
+      <a href="#" class="city" style="position: relative; display: block; height: 380px; overflow: hidden; border-radius: 999px 999px 0 0; text-decoration: none; color: #FFFFFF">
+        <img class="photo" src="/_blob/b815f99048549f0e377b8d415620b858" alt="">
+        <div class="fade"></div>
+        <span style="position: absolute; inset-inline: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 2px"><span class="h" style="font-size: 28px; font-weight: 800">{{c2.name}}</span><span style="font-size: 15px; color: rgba(255,255,255,0.85)">{{c2.line}}</span></span>
+      </a>
+      <a href="#" class="city" style="position: relative; display: block; height: 380px; overflow: hidden; border-radius: 999px 999px 0 0; text-decoration: none; color: #FFFFFF">
+        <img class="photo" src="/_blob/bb018b7d2afa95268908e78d9aca335f" alt="">
+        <div class="fade"></div>
+        <span style="position: absolute; inset-inline: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 2px"><span class="h" style="font-size: 28px; font-weight: 800">{{c3.name}}</span><span style="font-size: 15px; color: rgba(255,255,255,0.85)">{{c3.line}}</span></span>
+      </a>
+      <a href="#" class="city" style="position: relative; display: block; height: 380px; overflow: hidden; border-radius: 999px 999px 0 0; text-decoration: none; color: #FFFFFF">
+        <img class="photo" src="/_blob/8f10394b0dd9c1964cdc9562389f99a7" alt="">
+        <div class="fade"></div>
+        <span style="position: absolute; inset-inline: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 2px"><span class="h" style="font-size: 28px; font-weight: 800">{{c4.name}}</span><span style="font-size: 15px; color: rgba(255,255,255,0.85)">{{c4.line}}</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section style="position: relative; overflow: hidden; margin-top: 48px; color: #FFFFFF; min-height: 520px; display: flex; align-items: center">
+    <img class="photo" src="/_blob/2a57ba716c9e70ae45b9473d2048f26a" alt="">
+    <div class="shade"></div>
+    <div class="wrap" style="position: relative; width: 100%; padding-top: 80px; padding-bottom: 80px">
+      <div style="max-width: 600px; display: flex; flex-direction: column; gap: 18px">
+        <h2 class="h" style="font-size: clamp(36px, 4.4vw, 58px); font-weight: 800">{{t.overseasTitle}}</h2>
+        <p style="font-size: 20px; color: rgba(255,255,255,0.9)">{{t.overseasText}}</p>
+        <p style="font-size: 20px; color: rgba(255,255,255,0.9)">{{t.whatsappText}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 96px; padding-bottom: 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px 72px">
+    <div>
+      <h2 class="h" style="font-size: 38px; font-weight: 800">{{t.howTitle}}</h2>
+      <ol style="list-style: none; padding: 0; margin: 22px 0 0; border-top: 2px solid #1A1D24">
+        <sc-for list="{{steps}}" as="s" hint-placeholder-count="3">
+          <li style="display: flex; gap: 20px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid #E3DACA">
+            <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 40px; font-weight: 800; line-height: 1; width: 32px; flex-shrink: 0; color: #1D4A9E">{{s.n}}</span>
+            <span style="font-size: 20px; font-weight: 600">{{s.text}}</span>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+    <div>
+      <h2 class="h" style="font-size: 38px; font-weight: 800">{{t.faqTitle}}</h2>
+      <div style="margin-top: 22px; border-top: 2px solid #1A1D24">
+        <sc-for list="{{t.faqs}}" as="q" hint-placeholder-count="4">
+          <div style="padding: 20px 0; border-bottom: 1px solid #E3DACA; display: flex; flex-direction: column; gap: 6px">
+            <h3 style="font-size: 19px; font-weight: 800">{{q.q}}</h3>
+            <p style="font-size: 17px; color: #4A463D">{{q.a}}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #14100B; color: #CFC6B6">
+    <div class="wrap" style="padding-top: 56px; padding-bottom: 36px; display: flex; flex-wrap: wrap; gap: 28px 64px; justify-content: space-between">
+      <div style="flex: 2 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+        <span style="display: flex; align-items: baseline; gap: 10px; color: #FFFFFF"><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.03em">Parakh</span><span style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 20px; line-height: 1">پرکھ</span></span>
+        <p style="font-size: 16px; max-width: 560px">{{t.note}}</p>
+      </div>
+      <div class="nav" style="flex: 1 1 220px; display: flex; flex-direction: column">
+        <sc-for list="{{t.nav}}" as="n" hint-placeholder-count="3"><a href="#">{{n}}</a></sc-for>
+        <span style="padding-top: 10px; font-size: 15px">{{t.phone}}</span>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top: 16px; padding-bottom: 24px; border-top: 1px solid #2B241B; font-size: 14px; color: #8C8372; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px"><span>{{t.country}}</span><span>Photos: Wikimedia Commons contributors (temporary, to be replaced)</span></div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"heroImg":{"editor":"text","default":"","section":"Photos"},"overImg":{"editor":"text","default":"","section":"Photos"},"city1":{"editor":"text","default":"","section":"Photos"},"city2":{"editor":"text","default":"","section":"Photos"},"city3":{"editor":"text","default":"","section":"Photos"},"city4":{"editor":"text","default":"","section":"Photos"},"$preview":{"width":1280,"height":4700}}'>
+var PD_CAPS = ['PHOTO · Lahore', 'PHOTO · Karachi', 'PHOTO · Islamabad', 'PHOTO · Rawalpindi'];
+var PD_L = {
+  en: { dir: 'ltr', name: 'English', nav: ['How we check', 'Sample report', 'Help'], phone: 'WhatsApp: [YOUR NUMBER]', h1: 'Check a housing project before you pay.', sub: 'We search news, Facebook groups, court records and government notices for you, and give you a clear report in about 30 seconds.', label: 'Which housing project do you want to check?', placeholder: 'Which housing project do you want to check?', cta: 'Check this project', free: 'Free. No account needed.', tryLabel: 'Try', examples: ['Sample Heights, Rawalpindi', 'Sample Enclave, Islamabad'], sampleTag: 'Sample report', sampleWhen: 'Checked today', sampleShort: 'Sample Gardens, Lahore (example)', checkTitle: 'What we look for in every project', checkSub: 'Every report covers the same six things, so you can compare projects fairly.', checks: [{ t: 'Court cases', d: 'Cases against the developer or the project in public court records.' }, { t: 'Fraud complaints', d: 'Reports of money taken and plots never given.' }, { t: 'Late possession', d: 'Projects that missed the date they promised buyers.' }, { t: 'Buyer complaints', d: 'What buyers say in Facebook groups and forums.' }, { t: 'Approvals and NOC', d: 'Whether the authority lists the project or its layout plan.' }, { t: 'In the news', d: 'What newspapers and TV websites have reported.' }], sampleTitle: 'What you get', sampleIntro: 'One clear result, a short summary, and every finding with the link where we found it.', sampleCta: 'See a full sample report', foundTitle: 'What we found', share: 'Share on WhatsApp', points: [{ t: 'The result in plain words', d: 'No jargon. Green, amber, red or grey, with one line that says what it means.' }, { t: 'Every finding has its source', d: 'Tap any finding to open the news story, court record or post where we found it.' }, { t: 'Send it to family', d: 'One tap shares the full report on WhatsApp.' }], sampleName: 'Sample Gardens, Lahore · by Sample Builders (example)', sampleLabel: 'Some problems found', sampleSub: 'Check carefully before you pay', sampleSummary: 'Buyers say possession is about three years late. The layout plan is listed on the LDA website, but some buyers complain about extra charges.', serious: 'Serious', srcWord: 'Source', finds: [{ t: 'Late possession', d: 'Plots promised for 2021 are still not handed over', s: 'Dawn', serious: true }, { t: 'Buyer complaints', d: 'Complaints about extra development charges', s: 'Facebook group', serious: false }, { t: 'Approved by authority', d: 'The layout plan is listed on the LDA website', s: 'LDA website', serious: false }], cityTitle: 'For buyers in every city', cities: [{ n: 'Lahore', l: 'LDA projects and private societies' }, { n: 'Karachi', l: 'SBCA and KDA approvals' }, { n: 'Islamabad', l: 'CDA approved and unapproved schemes' }, { n: 'Rawalpindi', l: 'RDA projects on the GT Road and beyond' }], howTitle: 'How it works', steps: ['Type the project name the way you heard it', 'We search the internet for you', 'Read your report and share it on WhatsApp'], overseasTitle: 'Buying from abroad?', overseasText: 'Many buyers send money home from Dubai, Riyadh or London without ever seeing the project. Check it first, from wherever you are.', whatsappText: 'Every report has a WhatsApp button, so your family in Pakistan reads the same report you do.', faqTitle: 'Questions people ask', faqs: [{ q: 'Is Parakh free?', a: 'Yes. There is no account, no payment and no sign-up.' }, { q: 'Does Parakh guarantee a project is safe?', a: 'No. We show what is public online. Always check with the development authority and a lawyer before paying.' }, { q: 'Where does the information come from?', a: 'News websites, Facebook groups, court records and government notices. Every finding links to its source.' }, { q: 'What should I do after reading the report?', a: 'Ask the developer for the NOC, check the project with LDA, CDA or RDA, and speak to a lawyer.' }], note: 'Parakh does not verify or guarantee any project. It only shows what is public online. It is not legal advice.', country: 'Pakistan' },
+  ur: { dir: 'rtl', name: 'اردو', nav: ['ہم کیسے پرکھتے ہیں', 'نمونہ رپورٹ', 'مدد'], phone: 'واٹس ایپ: [YOUR NUMBER]', h1: 'پیسے دینے سے پہلے ہاؤسنگ پروجیکٹ کو پرکھیں۔', sub: 'ہم آپ کے لیے خبریں، فیس بک گروپس، عدالتی ریکارڈ اور سرکاری نوٹس تلاش کر کے تقریباً 30 سیکنڈ میں واضح رپورٹ دیتے ہیں۔', label: 'آپ کس ہاؤسنگ پروجیکٹ کو پرکھنا چاہتے ہیں؟', placeholder: 'آپ کس ہاؤسنگ پروجیکٹ کو پرکھنا چاہتے ہیں؟', cta: 'اس پروجیکٹ کو پرکھیں', free: 'مفت۔ کسی اکاؤنٹ کی ضرورت نہیں۔', tryLabel: 'آزمائیں', examples: ['سیمپل ہائٹس، راولپنڈی', 'سیمپل انکلیو، اسلام آباد'], sampleTag: 'نمونہ رپورٹ', sampleWhen: 'آج پرکھا گیا', sampleShort: 'سیمپل گارڈنز، لاہور (مثال)', checkTitle: 'ہم ہر پروجیکٹ میں کیا دیکھتے ہیں', checkSub: 'ہر رپورٹ میں یہی چھ باتیں ہوتی ہیں، تاکہ آپ پروجیکٹس کا موازنہ کر سکیں۔', checks: [{ t: 'عدالتی مقدمات', d: 'عوامی عدالتی ریکارڈ میں ڈویلپر یا پروجیکٹ کے خلاف مقدمات۔' }, { t: 'فراڈ کی شکایات', d: 'پیسے لے کر پلاٹ نہ دینے کی شکایات۔' }, { t: 'قبضے میں تاخیر', d: 'وہ پروجیکٹ جو خریداروں سے کیا گیا وعدہ پورا نہ کر سکے۔' }, { t: 'خریداروں کی شکایات', d: 'فیس بک گروپس اور فورمز پر خریدار کیا کہتے ہیں۔' }, { t: 'منظوری اور NOC', d: 'کیا ادارے کی فہرست میں پروجیکٹ یا اس کا لے آؤٹ پلان موجود ہے۔' }, { t: 'خبروں میں', d: 'اخبارات اور ٹی وی ویب سائٹس نے کیا رپورٹ کیا۔' }], sampleTitle: 'آپ کو کیا ملتا ہے', sampleIntro: 'ایک واضح نتیجہ، مختصر خلاصہ، اور ہر بات کے ساتھ وہ لنک جہاں سے وہ ملی۔', sampleCta: 'مکمل نمونہ رپورٹ دیکھیں', foundTitle: 'ہمیں کیا ملا', share: 'واٹس ایپ پر شیئر کریں', points: [{ t: 'نتیجہ آسان الفاظ میں', d: 'کوئی مشکل اصطلاح نہیں۔ سبز، نارنجی، سرخ یا سرمئی، اور ایک سطر کہ اس کا کیا مطلب ہے۔' }, { t: 'ہر بات کا ذریعہ ساتھ', d: 'کسی بھی بات کو دبا کر وہ خبر، عدالتی ریکارڈ یا پوسٹ کھولیں جہاں سے وہ ملی۔' }, { t: 'گھر والوں کو بھیجیں', d: 'ایک ٹیپ میں مکمل رپورٹ واٹس ایپ پر شیئر کریں۔' }], sampleName: 'سیمپل گارڈنز، لاہور · سیمپل بلڈرز (مثال)', sampleLabel: 'کچھ مسائل ملے', sampleSub: 'پیسے دینے سے پہلے احتیاط سے جانچیں', sampleSummary: 'خریداروں کے مطابق قبضہ تقریباً تین سال تاخیر کا شکار ہے۔ لے آؤٹ پلان LDA کی ویب سائٹ پر موجود ہے، لیکن کچھ خریدار اضافی چارجز کی شکایت کرتے ہیں۔', serious: 'سنگین', srcWord: 'ذریعہ', finds: [{ t: 'قبضے میں تاخیر', d: '2021 کے وعدے والے پلاٹ ابھی تک حوالے نہیں ہوئے', s: 'ڈان', serious: true }, { t: 'خریداروں کی شکایات', d: 'اضافی ڈویلپمنٹ چارجز کی شکایات', s: 'فیس بک گروپ', serious: false }, { t: 'ادارے سے منظور شدہ', d: 'لے آؤٹ پلان LDA کی ویب سائٹ پر موجود ہے', s: 'LDA ویب سائٹ', serious: false }], cityTitle: 'ہر شہر کے خریداروں کے لیے', cities: [{ n: 'لاہور', l: 'LDA پروجیکٹس اور نجی سوسائٹیاں' }, { n: 'کراچی', l: 'SBCA اور KDA کی منظوریاں' }, { n: 'اسلام آباد', l: 'CDA کی منظور شدہ اور غیر منظور شدہ اسکیمیں' }, { n: 'راولپنڈی', l: 'جی ٹی روڈ اور اس سے آگے RDA کے پروجیکٹس' }], howTitle: 'یہ کیسے کام کرتا ہے', steps: ['پروجیکٹ کا نام ویسے ہی لکھیں جیسا سنا ہے', 'ہم آپ کے لیے انٹرنیٹ پر تلاش کرتے ہیں', 'رپورٹ پڑھیں اور واٹس ایپ پر شیئر کریں'], overseasTitle: 'بیرونِ ملک سے خرید رہے ہیں؟', overseasText: 'بہت سے خریدار دبئی، ریاض یا لندن سے پروجیکٹ دیکھے بغیر گھر پیسے بھیجتے ہیں۔ پہلے پرکھ لیں، آپ جہاں بھی ہوں۔', whatsappText: 'ہر رپورٹ میں واٹس ایپ کا بٹن ہے، تاکہ پاکستان میں آپ کے گھر والے بھی وہی رپورٹ پڑھیں۔', faqTitle: 'لوگ کیا پوچھتے ہیں', faqs: [{ q: 'کیا پرکھ مفت ہے؟', a: 'جی ہاں۔ نہ اکاؤنٹ، نہ ادائیگی، نہ سائن اپ۔' }, { q: 'کیا پرکھ کسی پروجیکٹ کے محفوظ ہونے کی ضمانت دیتا ہے؟', a: 'نہیں۔ ہم صرف وہ دکھاتے ہیں جو انٹرنیٹ پر عام موجود ہے۔ پیسے دینے سے پہلے ہمیشہ ترقیاتی ادارے اور وکیل سے معلوم کریں۔' }, { q: 'معلومات کہاں سے آتی ہیں؟', a: 'خبروں کی ویب سائٹس، فیس بک گروپس، عدالتی ریکارڈ اور سرکاری نوٹس۔ ہر بات کے ساتھ اس کا لنک ہوتا ہے۔' }, { q: 'رپورٹ پڑھنے کے بعد کیا کروں؟', a: 'ڈویلپر سے NOC مانگیں، LDA، CDA یا RDA سے پروجیکٹ کے بارے میں معلوم کریں، اور وکیل سے بات کریں۔' }], note: 'پرکھ کسی پروجیکٹ کی تصدیق یا ضمانت نہیں دیتا۔ یہ صرف وہ دکھاتا ہے جو انٹرنیٹ پر عام موجود ہے۔ یہ قانونی مشورہ نہیں۔', country: 'پاکستان' },
+  ar: { dir: 'rtl', name: 'العربية', nav: ['كيف نفحص', 'تقرير نموذجي', 'المساعدة'], phone: 'واتساب: [YOUR NUMBER]', h1: 'افحص المشروع السكني قبل أن تدفع.', sub: 'نبحث نيابةً عنك في الأخبار ومجموعات فيسبوك وسجلات المحاكم والإشعارات الحكومية، ونقدّم لك تقريرًا واضحًا في نحو 30 ثانية.', label: 'أي مشروع سكني تريد أن تفحصه؟', placeholder: 'أي مشروع سكني تريد أن تفحصه؟', cta: 'افحص هذا المشروع', free: 'مجاني. لا حاجة لحساب.', tryLabel: 'جرّب', examples: ['سامبل هايتس، راولبندي', 'سامبل إنكليف، إسلام آباد'], sampleTag: 'تقرير نموذجي', sampleWhen: 'فُحص اليوم', sampleShort: 'سامبل غاردنز، لاهور (مثال)', checkTitle: 'ما الذي نبحث عنه في كل مشروع', checkSub: 'يغطي كل تقرير الأمور الستة نفسها، لتقارن بين المشاريع بإنصاف.', checks: [{ t: 'قضايا في المحاكم', d: 'قضايا ضد المطوّر أو المشروع في السجلات العامة.' }, { t: 'شكاوى احتيال', d: 'بلاغات عن أخذ أموال دون تسليم القطع.' }, { t: 'تأخّر التسليم', d: 'مشاريع تأخرت عن الموعد الذي وعدت به المشترين.' }, { t: 'شكاوى المشترين', d: 'ما يقوله المشترون في مجموعات فيسبوك والمنتديات.' }, { t: 'الموافقات وشهادة عدم الممانعة', d: 'هل تُدرج الجهة المختصة المشروع أو مخططه.' }, { t: 'في الأخبار', d: 'ما نشرته الصحف ومواقع القنوات.' }], sampleTitle: 'ما الذي تحصل عليه', sampleIntro: 'نتيجة واضحة، وملخص قصير، وكل معلومة مع رابط مصدرها.', sampleCta: 'شاهد تقريرًا نموذجيًا كاملًا', foundTitle: 'ما الذي وجدناه', share: 'مشاركة عبر واتساب', points: [{ t: 'النتيجة بكلمات بسيطة', d: 'بلا مصطلحات. أخضر أو برتقالي أو أحمر أو رمادي، مع سطر يشرح المعنى.' }, { t: 'لكل معلومة مصدرها', d: 'اضغط على أي معلومة لتفتح الخبر أو سجل المحكمة أو المنشور الذي وجدناها فيه.' }, { t: 'أرسله لعائلتك', d: 'بلمسة واحدة تشارك التقرير كاملًا عبر واتساب.' }], sampleName: 'سامبل غاردنز، لاهور · سامبل بيلدرز (مثال)', sampleLabel: 'وُجدت بعض المشكلات', sampleSub: 'تحقّق بعناية قبل أن تدفع', sampleSummary: 'يقول المشترون إن التسليم متأخر نحو ثلاث سنوات. المخطط منشور على موقع هيئة LDA، لكن بعض المشترين يشكون من رسوم إضافية.', serious: 'خطير', srcWord: 'المصدر', finds: [{ t: 'تأخّر التسليم', d: 'قطع 2021 الموعودة لم تُسلَّم بعد', s: 'Dawn', serious: true }, { t: 'شكاوى المشترين', d: 'شكاوى من رسوم تطوير إضافية', s: 'مجموعة فيسبوك', serious: false }, { t: 'معتمد من الجهة المختصة', d: 'المخطط منشور على موقع LDA', s: 'موقع LDA', serious: false }], cityTitle: 'للمشترين في كل مدينة', cities: [{ n: 'لاهور', l: 'مشاريع LDA والمجمعات الخاصة' }, { n: 'كراتشي', l: 'موافقات SBCA وKDA' }, { n: 'إسلام آباد', l: 'مخططات CDA المعتمدة وغير المعتمدة' }, { n: 'راولبندي', l: 'مشاريع RDA على طريق GT وما بعده' }], howTitle: 'كيف يعمل', steps: ['اكتب اسم المشروع كما سمعته', 'نبحث في الإنترنت نيابةً عنك', 'اقرأ تقريرك وشاركه عبر واتساب'], overseasTitle: 'تشتري من الخارج؟', overseasText: 'يرسل كثير من المشترين المال من دبي أو الرياض أو لندن دون أن يروا المشروع. افحصه أولًا، أينما كنت.', whatsappText: 'في كل تقرير زر واتساب، ليقرأ أهلك التقرير نفسه.', faqTitle: 'أسئلة يطرحها الناس', faqs: [{ q: 'هل «باراخ» مجاني؟', a: 'نعم. لا حساب ولا دفع ولا تسجيل.' }, { q: 'هل يضمن «باراخ» أن المشروع آمن؟', a: 'لا. نعرض ما هو منشور على الإنترنت فقط. تحقّق دائمًا من هيئة التطوير ومحامٍ قبل الدفع.' }, { q: 'من أين تأتي المعلومات؟', a: 'من مواقع الأخبار ومجموعات فيسبوك وسجلات المحاكم والإشعارات الحكومية، مع رابط لكل معلومة.' }, { q: 'ماذا أفعل بعد قراءة التقرير؟', a: 'اطلب شهادة عدم الممانعة من المطوّر، وتحقّق من المشروع لدى الهيئة المختصة، واستشر محاميًا.' }], note: 'لا يتحقق «باراخ» من أي مشروع ولا يضمنه. يعرض فقط ما هو منشور على الإنترنت، وليس استشارة قانونية.', country: 'باكستان' }
+};
+class Component extends DCLogic {
+  renderVals() {
+    var k = (this.state && this.state.lang) || this.props.startLang || 'en';
+    var t = PD_L[k];
+    var self = this;
+    var p = this.props;
+    var cityImgs = [p.city1, p.city2, p.city3, p.city4];
+    return {
+      t: t, lang: k, dir: t.dir, langClass: 'L L-' + k,
+      heroImg: p.heroImg || '', hasHero: !!p.heroImg, noHero: !p.heroImg,
+      overImg: p.overImg || '', hasOver: !!p.overImg, noOver: !p.overImg,
+      langs: ['en', 'ur', 'ar'].map(function (c) { return { label: PD_L[c].name, cls: 'lb lb-' + c + (c === k ? ' on' : ''), pressed: c === k ? 'true' : 'false', pick: function () { self.setState({ lang: c }); } }; }),
+      finds: t.finds.map(function (f, i) { return { t: f.t, d: f.d, s: f.s, serious: f.serious, border: i < t.finds.length - 1 ? '1px solid #EFE8DA' : '0' }; }),
+      checks: t.checks.map(function (c, i) { return { n: '0' + (i + 1), t: c.t, d: c.d }; }),
+      points: t.points.map(function (p, i) { return { n: '0' + (i + 1), t: p.t, d: p.d }; }),
+      c1: { name: t.cities[0].n, line: t.cities[0].l }, c2: { name: t.cities[1].n, line: t.cities[1].l }, c3: { name: t.cities[2].n, line: t.cities[2].l }, c4: { name: t.cities[3].n, line: t.cities[3].l },
+      steps: t.steps.map(function (s, i) { return { n: String(i + 1), text: s }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

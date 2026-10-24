@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parakh Checking, Direction D</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Nastaliq+Urdu:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF8F2}
+.L h1,.L h2,.L h3,.L p,.L ol{margin:0}
+.L-en{font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.55}
+.L-ur{font-family:'Noto Nastaliq Urdu',serif;line-height:2.1}
+.L-en .h{letter-spacing:-0.03em;line-height:1.08}
+.L-ur .h{line-height:1.75}
+a{color:#1D4A9E;text-underline-offset:3px}
+.lat{font-family:'Plus Jakarta Sans',sans-serif}
+.lb{min-height:40px;padding:0 10px;border:0;background:transparent;color:#5E5A50;cursor:pointer;font-size:14px}
+.lb.on{color:#1D4A9E;font-weight:700;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.lb-en{font-family:'Plus Jakarta Sans',sans-serif}.lb-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:14px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px;box-sizing:border-box}
+@media (max-width:900px){.wrap{padding-left:18px;padding-right:18px}}
+.nav a{color:#2A2721;text-decoration:none;font-size:15px;font-weight:600;min-height:44px;display:flex;align-items:center}
+.st{width:40px;height:40px;border-radius:999px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:2px solid #CFC6B6;background:#FFFFFF}
+.st-done{background:#1D4A9E;border-color:#1D4A9E}
+.st-now{border-color:#1D4A9E}
+.ring{width:22px;height:22px;border-radius:999px;border:3px solid #C9D3EA;border-top-color:#1D4A9E;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.s-txt{font-size:20px;font-weight:600;color:#7C7668}
+.s-done .s-txt{color:#4A463D}
+.s-now .s-txt{color:#1A1D24;font-weight:800}
+</style>
+</helmet>
+<div class="{{langClass}}" dir="{{dir}}" lang="{{lang}}" style="width: 100%; min-height: 100vh; box-sizing: border-box; background: #FBF8F2; color: #1A1D24; font-size: 17px; display: flex; flex-direction: column">
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E3DACA">
+    <div class="wrap" style="padding-top: 14px; padding-bottom: 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+      <span style="display: flex; align-items: baseline; gap: 10px"><span class="lat" style="font-weight: 800; font-size: 26px; letter-spacing: -0.03em; color: #1D4A9E">Parakh</span><span style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 18px; color: #1D4A9E; line-height: 1">پرکھ</span></span>
+      <nav class="nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px">
+        <sc-for list="{{t.nav}}" as="n" hint-placeholder-count="2"><a href="#">{{n}}</a></sc-for>
+        <div role="group" aria-label="Language" style="display: flex"><sc-for list="{{langs}}" as="l" hint-placeholder-count="2"><button type="button" class="{{l.cls}}" aria-pressed="{{l.pressed}}" onClick="{{l.pick}}">{{l.label}}</button></sc-for></div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" style="width: 100%; padding-top: 64px; padding-bottom: 80px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+    <section style="flex: 3 1 600px; min-width: 0; background: #FFFFFF; border: 1px solid #E3DACA; border-top: 6px solid #1D4A9E; padding: 40px 44px; display: flex; flex-direction: column; gap: 28px" aria-live="polite">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="font-size: 16px; font-weight: 700; color: #5E5A50">{{t.checking}}</p>
+        <h1 class="h" style="font-size: clamp(34px, 4vw, 50px); font-weight: 800">{{t.project}}</h1>
+        <p style="font-size: 19px; color: #4A463D">{{t.time}}</p>
+      </div>
+      <ol style="list-style: none; padding: 0; display: flex; flex-direction: column">
+        <sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+          <li class="{{s.cls}}" style="display: flex; align-items: center; gap: 18px; padding: 18px 0; border-top: 1px solid #EFE8DA">
+            <span class="{{s.icon}}">
+              <sc-if value="{{s.done}}" hint-placeholder-val="{{false}}"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></sc-if>
+              <sc-if value="{{s.now}}" hint-placeholder-val="{{false}}"><span class="ring"></span></sc-if>
+              <sc-if value="{{s.later}}" hint-placeholder-val="{{true}}"><span class="lat" style="font-size: 16px; font-weight: 800; color: #7C7668">{{s.n}}</span></sc-if>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span class="s-txt">{{s.text}}</span><sc-if value="{{s.now}}" hint-placeholder-val="{{false}}"><span style="font-size: 15px; color: #5E5A50">{{t.nowNote}}</span></sc-if></span>
+          </li>
+        </sc-for>
+      </ol>
+      <p style="font-size: 16px; color: #5E5A50; border-top: 1px solid #EFE8DA; padding-top: 18px">{{t.stay}}</p>
+    </section>
+
+    <aside style="flex: 2 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <h2 class="h" style="font-size: 28px; font-weight: 800">{{t.waitTitle}}</h2>
+      <p style="font-size: 17px; color: #4A463D">{{t.waitIntro}}</p>
+      <ol style="list-style: none; padding: 0; border-top: 2px solid #1A1D24">
+        <sc-for list="{{questions}}" as="q" hint-placeholder-count="4">
+          <li style="display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid #E3DACA"><span class="lat" style="font-size: 22px; font-weight: 800; color: #1D4A9E; width: 24px; flex-shrink: 0">{{q.n}}</span><span style="font-size: 18px">{{q.text}}</span></li>
+        </sc-for>
+      </ol>
+    </aside>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"step":{"editor":"enum","options":["1","2","3","4"],"default":"2"},"startLang":{"editor":"enum","options":["en","ur"],"default":"en"},"$preview":{"width":1280,"height":1100}}'>
+var PC = {
+  en: { dir: 'ltr', name: 'English', nav: ['How we check', 'Help'], checking: 'Checking', project: 'Sample Gardens, Lahore', time: 'This takes about 30 seconds. You do not need to do anything.', steps: ['Understanding the project name', 'Searching news, Facebook and court records', 'Reading what we found', 'Preparing your report'], nowNote: 'Working on this now', stay: 'Keep this page open. Your report will appear here by itself.', waitTitle: 'While you wait', waitIntro: 'Questions to ask the developer before you pay anything:', questions: ['Can I see the NOC from the development authority?', 'Is the layout plan approved, and can I have a copy?', 'When exactly will I get possession, in writing?', 'Who owns the land, and is it in the registry?'] },
+  ur: { dir: 'rtl', name: 'اردو', nav: ['ہم کیسے پرکھتے ہیں', 'مدد'], checking: 'پرکھا جا رہا ہے', project: 'سیمپل گارڈنز، لاہور', time: 'اس میں تقریباً 30 سیکنڈ لگتے ہیں۔ آپ کو کچھ کرنے کی ضرورت نہیں۔', steps: ['پروجیکٹ کا نام سمجھا جا رہا ہے', 'خبریں، فیس بک اور عدالتی ریکارڈ تلاش ہو رہے ہیں', 'جو ملا اسے پڑھا جا رہا ہے', 'آپ کی رپورٹ تیار ہو رہی ہے'], nowNote: 'اس وقت یہ کام جاری ہے', stay: 'یہ صفحہ کھلا رکھیں۔ آپ کی رپورٹ خود یہاں آ جائے گی۔', waitTitle: 'انتظار کے دوران', waitIntro: 'کوئی بھی رقم دینے سے پہلے ڈویلپر سے یہ سوال پوچھیں:', questions: ['کیا میں ترقیاتی ادارے کا NOC دیکھ سکتا ہوں؟', 'کیا لے آؤٹ پلان منظور شدہ ہے، اور کیا اس کی کاپی مل سکتی ہے؟', 'قبضہ ٹھیک کب ملے گا، تحریری طور پر؟', 'زمین کس کی ملکیت ہے، اور کیا یہ رجسٹری میں درج ہے؟'] }
+};
+class Component extends DCLogic {
+  renderVals() {
+    var k = (this.state && this.state.lang) || this.props.startLang || 'en';
+    var t = PC[k]; var self = this; var cur = parseInt(this.props.step || '2', 10);
+    return {
+      t: t, lang: k, dir: t.dir, langClass: 'L L-' + k,
+      langs: ['en', 'ur'].map(function (c) { return { label: PC[c].name, cls: 'lb lb-' + c + (c === k ? ' on' : ''), pressed: c === k ? 'true' : 'false', pick: function () { self.setState({ lang: c }); } }; }),
+      steps: t.steps.map(function (s, i) { var n = i + 1; var st = n < cur ? 'done' : (n === cur ? 'now' : 'later'); return { n: String(n), text: s, done: st === 'done', now: st === 'now', later: st === 'later', cls: 's-' + st, icon: 'st st-' + st }; }),
+      questions: t.questions.map(function (q, i) { return { n: String(i + 1), text: q }; })
+    };
+  }
+}
+</script>
+</body>
+</html>
