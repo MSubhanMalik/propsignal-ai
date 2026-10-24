@@ -1,0 +1,9 @@
+{
+  "name": "fourtix-motion-demo-scripts",
+  "private": true,
+  "type": "module",
+  "description": "Renderer for Fourtix motion demos. Run `npm install` here once.",
+  "dependencies": {
+    "playwright-core": "1.56.1"
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parakh · Coming soon</title>
+<link rel="stylesheet" href="film.css">
+<link href="fonts/fonts.css" rel="stylesheet"><!-- local copies of Plus Jakarta Sans + Noto Nastaliq Urdu (OFL) -->
+<style>
+  :root{--paper:#FBF8F2;--ink:#1A1D24;--accent:#1D4A9E;--night:#0D0B08;--gradient:linear-gradient(125deg,#112C66 0%,#1D4A9E 55%,#2B5FC0 100%);--sans:"Plus Jakarta Sans",system-ui,sans-serif;}
+  body{font-family:var(--sans);}
+  .ur{font-family:"Noto Nastaliq Urdu",serif;direction:rtl;}
+  .scene.night{background:var(--night);color:#fff;}
+  .scene.ivory{background:var(--paper);color:var(--ink);}
+  .scene.cobalt{background:var(--gradient);color:#fff;}
+  .bgimg{position:absolute;inset:0;overflow:hidden;}
+  .bgimg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(13,11,8,.35),rgba(13,11,8,.92) 72%);}
+  .glow{position:absolute;border-radius:50%;filter:blur(120px);}
+  .wb{display:inline-block;white-space:pre;}
+  .kick{font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;}
+  .ctr{position:absolute;left:0;right:0;text-align:center;}
+  .money{font-size:210px;font-weight:800;letter-spacing:-.05em;line-height:1;color:#F5B14A;font-variant-numeric:tabular-nums;}
+  .money small{font-size:90px;font-weight:700;letter-spacing:-.02em;color:rgba(245,177,74,.75);margin-right:24px;}
+  .big{font-size:150px;font-weight:800;letter-spacing:-.05em;line-height:1;}
+  .mid{font-size:88px;font-weight:800;letter-spacing:-.04em;line-height:1.08;}
+  .huge{font-size:240px;font-weight:800;letter-spacing:-.06em;line-height:1;}
+  .stack{position:absolute;left:0;right:0;top:400px;height:260px;}
+  .stack>div{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .rule{position:absolute;height:3px;transform-origin:left center;}
+  .src{position:absolute;font-weight:700;letter-spacing:-.01em;color:#B5AB98;white-space:nowrap;}
+  .mark{position:absolute;left:0;right:0;display:flex;justify-content:center;align-items:baseline;}
+  .ring{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.10);}
+</style>
+</head>
+<body data-duration="5.4" data-fps="30" data-width="1920" data-height="1080">
+<div class="stage">
+  <!-- 5 · 15.6–20  Brand reveal + language morph -->
+  <section class="scene cobalt" data-from="0" data-to="5.4">
+    <div class="ring" style="left:610px;top:190px;width:700px;height:700px" data-in="scale" data-at="0.05" data-dur="1.6"></div>
+    <div class="ring" style="left:410px;top:-10px;width:1100px;height:1100px;border-color:rgba(255,255,255,.05)" data-in="scale" data-at="0.15" data-dur="1.8"></div>
+    <div class="mark" style="top:330px"><div style="font-size:260px;font-weight:800;letter-spacing:-.06em;line-height:1" data-in="blur" data-at="0.1" data-dur="0.8" data-out="blur" data-out-at="1.85" data-out-dur="0.45">Parakh</div></div>
+    <div class="mark" style="top:240px"><div class="ur" style="font-size:210px;font-weight:700;line-height:1.6" data-in="blur" data-at="2.05" data-dur="0.8">پرکھ</div></div>
+    <div class="ctr" style="top:720px;font-size:30px;font-weight:600;color:rgba(255,255,255,.82)" data-in="fade-up" data-at="0.7" data-dur="0.6" data-out="blur" data-out-at="1.85" data-out-dur="0.45">/pə·rəkh/ · to examine, to test the worth of</div>
+    <div class="ctr ur" style="top:712px;font-size:36px;color:rgba(255,255,255,.85)" data-in="blur" data-at="2.35" data-dur="0.8">پرکھنا · کسی چیز کی اصل قدر جانچنا</div>
+  </section>
+
+</div>
+<script>
+(()=>{document.querySelectorAll("[data-words]").forEach(el=>{
+  const [at,st,dur,outAt,ost]=el.dataset.words.split(",").map(Number);
+  const parts=[];el.childNodes.forEach(n=>{const amber=n.nodeType===1;(n.textContent.trim().split(/\s+/)).forEach(w=>w&&parts.push([w,amber]));});
+  el.textContent="";
+  parts.forEach(([w,amber],i)=>{const s=document.createElement("span");s.className="wb";s.textContent=w+(i<parts.length-1?" ":"");if(amber)s.style.color=(el.closest(".ivory")?"#1D4A9E":"#F5B14A");
+    s.dataset.in="wordblur";s.dataset.at=(at+i*st).toFixed(3);s.dataset.dur=String(dur);
+    if(!isNaN(outAt)){s.dataset.out="wordblur";s.dataset.outAt=(outAt+i*(ost||0.03)).toFixed(3);s.dataset.outDur="0.45";}
+    el.appendChild(s);});
+});})();
+</script>
+<script src="film.js"></script>
+<script>
+(()=>{const vids=[...document.querySelectorAll('video[data-vfrom]')];
+ vids.forEach(v=>{v.muted=true;v.preload='auto';v.pause();});
+ const loaded=Promise.all(vids.map(v=>v.readyState>=2?1:new Promise(r=>v.addEventListener('loadeddata',r,{once:true}))));
+ const F=window.__film,orig=F.seek;F.ready=Promise.all([F.ready,loaded]);
+ F.seek=(t)=>{orig(t);return Promise.all(vids.map(v=>{const lt=Math.max(0,Math.min(v.duration-0.04,t-parseFloat(v.dataset.vfrom)));
+   if(Math.abs(v.currentTime-lt)<0.0005)return 0;return new Promise(r=>{v.addEventListener('seeked',()=>requestAnimationFrame(()=>r()),{once:true});v.currentTime=lt;});}));};
+ // live preview: play videos alongside
+ if(!navigator.webdriver){vids.forEach(v=>{const f=parseFloat(v.dataset.vfrom);setTimeout(()=>v.play(),f*1000);});}
+})();
+</script>
+</body>
+</html>
