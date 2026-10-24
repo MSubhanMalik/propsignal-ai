@@ -20,6 +20,8 @@ reference for the job:
 | PDF report | `references/design-system.md` § Report PDF | `assets/web/ReportPDF.dc.html` + `scripts/dc-to-static.py` + `scripts/html-to-pdf.js` |
 | LinkedIn / social posts | `references/social.md` | — |
 
+**Worked example:** `examples/teaser-v7/` is the approved 36s teaser with every real file used to make it (film HTML, runtime, prepared clips, source footage, music cues, music, street sound, voice tag, final mix, final MP4) plus `STORYBOARD.md` and a `make.sh` that rebuilds it. Study it before making a new film.
+
 ## Non-negotiables (summary — full list in brand.md)
 1. **Made-up names only** in every design, video and example: "Sample Gardens, Lahore", "Sample Builders (example)". Never show a real society, developer or property brand next to a negative finding, and never use footage or photos that show one (Bahria Town, DHA, Graana, Zameen… logos, gates, billboards).
 2. **Never say** "verified", "safe", "guaranteed" or "never wrong". Parakh reports what is public online.

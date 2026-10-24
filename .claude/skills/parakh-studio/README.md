@@ -36,6 +36,7 @@ scripts/music.py            synthesised score from a cues file
 scripts/mix.sh              music + street sound + voice → final MP4 (−15 LUFS)
 scripts/dc-to-static.py     canvas .dc.html → static HTML (for PDF export)
 scripts/html-to-pdf.js      static HTML → A4 PDF
+examples/teaser-v7/         the approved teaser: final MP4, film, clips, source footage, audio, storyboard, make.sh
 ```
 
 ## Quick start (video)
@@ -48,8 +49,8 @@ python3 $S/music.py cues.json music.wav                               # cues: re
 $S/render.sh work/teaser/film.html work/silent.mp4
 $S/mix.sh work/silent.mp4 music.wav work/final.mp4 --street work/teaser/img/v-crowd.wav
 ```
-The footage used in v7 (Pexels market street clip 15879891, Badshahi aerial 9003971) is not bundled
-(too large); re-download it from Pexels or use your own clips.
+Full worked example with all real files: `examples/teaser-v7/` (`./make.sh` rebuilds the video;
+`./make.sh --clips` re-cuts the clips from the original Pexels footage first).
 
 ## Credits
 Photos: Wikimedia Commons contributors (CC licences — keep the credit line or replace with owned photos).
