@@ -1,13 +1,14 @@
-# Parakh · "Unapproved. Unsanctioned. Undelivered." (from teaser v5, 5.9–11.1s)
+# Parakh · "Unapproved. Unsanctioned. Undelivered." (teaser v5 words + construction opener)
 
-5.8s · 1920×1080 · 30fps · black background. "SOME ARE" (letter-spacing tracks in) → **Unapproved.** (coral, blurs in
+8.5s · 1920×1080 · 30fps. Opens on a tight crop of a half-built concrete frame (no signage) with "PAKISTAN · Some promises are still under construction." (0–2.7s), then on black: "SOME ARE" (letter-spacing tracks in) → **Unapproved.** (coral, blurs in
 at 0.15s) → swaps in place to **Unsanctioned.** (amber, 1.8s) → **Undelivered.** (pale grey, 3.4s) → "Even legal projects
 can take decades to hand over." (4.0s). A low boom lands on each word (v5 score).
 
 | File | What it is |
 |---|---|
 | `Parakh-Unapproved-Words-16x9.mp4` | the finished clip |
-| `source/film.html` | the scene (all words, colours and timings) |
+| `source/film.html` | the film (all words, colours and timings) |
+| `source/v-construction.webm` | opener footage: Pexels 15864483, 0.3–3.2s, cropped 1600×900 at (1600,330) to exclude project signage |
 | `source/film.js`, `source/film.css` | animation runtime + base styles |
 | `source/fonts/` | Plus Jakarta Sans + Noto Nastaliq Urdu, local woff2 (SIL Open Font License) |
 | `source/music-cut.wav` | the exact audio in the clip |

@@ -14,11 +14,22 @@
   .huge{font-size:240px;font-weight:800;letter-spacing:-.06em;line-height:1;}
   .stack{position:absolute;left:0;right:0;top:400px;height:260px;}
   .stack>div{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .bgimg{position:absolute;inset:0;overflow:hidden;}
+  .wb{display:inline-block;white-space:pre;}
+  .mid{font-size:84px;font-weight:800;letter-spacing:-.04em;line-height:1.08;}
 </style>
 </head>
-<body data-duration="5.8" data-fps="30" data-width="1920" data-height="1080">
+<body data-duration="8.5" data-fps="30" data-width="1920" data-height="1080">
 <div class="stage">
-  <section class="scene night" data-from="0" data-to="5.8">
+  <section class="scene night" data-from="0" data-to="2.7">
+    <div class="bgimg"><video src="v-construction.webm" data-vfrom="0" muted playsinline style="width:100%;height:100%;object-fit:cover" data-pan="scale(1.0) | scale(1.05)" data-pan-dur="3"></video></div>
+    <div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(13,11,8,.1) 30%,rgba(13,11,8,.88) 100%)"></div>
+    <div class="abs" style="left:120px;bottom:130px;width:1700px">
+      <div class="kick" style="color:rgba(255,255,255,.72)" data-in="track" data-at="0.15" data-dur="1.1">Pakistan</div>
+      <div class="mid" style="margin-top:18px;color:#fff" data-words="0.35,0.08,0.65">Some promises are <span>still under construction.</span></div>
+    </div>
+  </section>
+  <section class="scene night" data-from="2.7" data-to="8.5">
     <div class="ctr kick" style="top:300px;color:rgba(255,255,255,.55)" data-in="track" data-at="0.1" data-dur="1">Some are</div>
     <div class="stack">
       <div class="huge" style="color:#F07A6E" data-in="blur" data-at="0.15" data-dur="0.6" data-out="blur" data-out-at="1.6" data-out-dur="0.4">Unapproved.</div>
@@ -28,6 +39,21 @@
     <div class="ctr" style="top:740px;font-size:34px;font-weight:600;color:rgba(255,255,255,.62)" data-in="fade-up" data-at="4.0" data-dur="0.6">Even legal projects can take decades to hand over.</div>
   </section>
 </div>
+<script>
+(()=>{document.querySelectorAll("[data-words]").forEach(el=>{
+  const [at,st,dur]=el.dataset.words.split(",").map(Number);const parts=[];
+  el.childNodes.forEach(n=>{const hi=n.nodeType===1;(n.textContent.trim().split(/\s+/)).forEach(w=>w&&parts.push([w,hi]));});
+  el.textContent="";parts.forEach(([w,hi],i)=>{const s=document.createElement("span");s.className="wb";s.textContent=w+(i<parts.length-1?" ":"");
+    if(hi)s.style.color="#F5B14A";s.dataset.in="wordblur";s.dataset.at=(at+i*st).toFixed(3);s.dataset.dur=String(dur);el.appendChild(s);});});})();
+</script>
 <script src="film.js"></script>
+<script>
+(()=>{const vids=[...document.querySelectorAll('video[data-vfrom]')];vids.forEach(v=>{v.muted=true;v.preload='auto';v.pause();});
+ const loaded=Promise.all(vids.map(v=>v.readyState>=2?1:new Promise(r=>v.addEventListener('loadeddata',r,{once:true}))));
+ const F=window.__film,orig=F.seek;F.ready=Promise.all([F.ready,loaded]);
+ F.seek=(t)=>{orig(t);return Promise.all(vids.map(v=>{const lt=Math.max(0,Math.min(v.duration-0.04,t-parseFloat(v.dataset.vfrom)));
+   if(Math.abs(v.currentTime-lt)<0.0005)return 0;return new Promise(r=>{v.addEventListener('seeked',()=>requestAnimationFrame(()=>r()),{once:true});v.currentTime=lt;});}));};
+ if(!navigator.webdriver){vids.forEach(v=>{setTimeout(()=>v.play(),parseFloat(v.dataset.vfrom)*1000);});}})();
+</script>
 </body>
 </html>
