@@ -16,7 +16,8 @@ Positioning line: **An approval check tells you if a project is legal. Parakh te
 ## Name
 - **Parakh** (Latin) + **پرکھ** (Urdu, Nastaliq) always appear together in the logo lockup: `Parakh  پرکھ`.
 - Meaning line: *Parakh · /pə·rəkh/ · to examine, to test the worth of* — Urdu: *پرکھنا · کسی چیز کی اصل قدر جانچنا*.
-- Logo = wordmark only (Plus Jakarta Sans 800, letter-spacing −0.03 to −0.06em) + پرکھ (Noto Nastaliq Urdu 400–700, ~0.65× the Latin size, baseline-aligned).
+- Logo mark = **"Mehrab lens"**: ivory Mughal arch on a cobalt tile with an amber dot inside (files in `assets/logo/`, rules in its README).
+- Wordmark (Plus Jakarta Sans 800, letter-spacing −0.03 to −0.06em) + پرکھ (Noto Nastaliq Urdu 400–700, ~0.65× the Latin size, baseline-aligned).
 
 ## Colour tokens
 | Token | Hex | Use |
