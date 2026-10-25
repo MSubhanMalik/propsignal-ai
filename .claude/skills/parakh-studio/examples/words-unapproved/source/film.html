@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parakh · Unapproved / Unsanctioned / Undelivered</title>
+<link rel="stylesheet" href="film.css">
+<link href="fonts/fonts.css" rel="stylesheet"><!-- local Plus Jakarta Sans + Noto Nastaliq Urdu (OFL) -->
+<style>
+  :root{--night:#0D0B08;--sans:"Plus Jakarta Sans",system-ui,sans-serif;}
+  body{font-family:var(--sans);}
+  .scene.night{background:var(--night);color:#fff;}
+  .kick{font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;}
+  .ctr{position:absolute;left:0;right:0;text-align:center;}
+  .huge{font-size:240px;font-weight:800;letter-spacing:-.06em;line-height:1;}
+  .stack{position:absolute;left:0;right:0;top:400px;height:260px;}
+  .stack>div{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+</style>
+</head>
+<body data-duration="5.8" data-fps="30" data-width="1920" data-height="1080">
+<div class="stage">
+  <section class="scene night" data-from="0" data-to="5.8">
+    <div class="ctr kick" style="top:300px;color:rgba(255,255,255,.55)" data-in="track" data-at="0.1" data-dur="1">Some are</div>
+    <div class="stack">
+      <div class="huge" style="color:#F07A6E" data-in="blur" data-at="0.15" data-dur="0.6" data-out="blur" data-out-at="1.6" data-out-dur="0.4">Unapproved.</div>
+      <div class="huge" style="color:#F5B14A" data-in="blur" data-at="1.8" data-dur="0.6" data-out="blur" data-out-at="3.2" data-out-dur="0.4">Unsanctioned.</div>
+      <div class="huge" style="color:#D3D8DF" data-in="blur" data-at="3.4" data-dur="0.6">Undelivered.</div>
+    </div>
+    <div class="ctr" style="top:740px;font-size:34px;font-weight:600;color:rgba(255,255,255,.62)" data-in="fade-up" data-at="4.0" data-dur="0.6">Even legal projects can take decades to hand over.</div>
+  </section>
+</div>
+<script src="film.js"></script>
+</body>
+</html>
