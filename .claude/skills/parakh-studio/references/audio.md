@@ -35,3 +35,11 @@ python3 -c "import soundfile as sf;from kokoro_onnx import Kokoro;k=Kokoro('koko
 `scripts/mix.sh silent.mp4 music.wav final.mp4 --street img/clip.wav --voice jald.wav@34.0`
 Music fades up over the first 3.4s under the street sound, ducks under voices (sidechain), and the master is
 normalised to −15 LUFS (social-media loudness), true peak −1.5 dB.
+
+## Alternative scores (keep the reveal)
+`scripts/music_styles.py <style> cues.json reveal_score.wav out.wav` writes a new score up to the logo reveal and
+splices in the original score from the reveal on (the approved reveal music stays identical).
+- `desi`: tanpura drone + tabla-style hand percussion (keherwa pattern) + plucked melody in a Bhairav-like scale.
+  Used for the words teaser. Cues: `{"dur","reveal","hits":[...],"perc":[start,end]}`.
+- `pizz`: pizzicato ostinato + ticking hats + a hard silence on the stamp flip + low pulse under the punchline.
+  Used for "Approved doesn't mean safe". Cues: `{"dur","reveal","silence":[t,len],"pulse":[start,end]}`.
